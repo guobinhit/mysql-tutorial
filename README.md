@@ -9,9 +9,12 @@
 
 第 3 篇：[史上最简单的 MySQL 教程（三）「 MySQL 数据库」](https://github.com/guobinhit/mysql-tutorial/blob/master/mysql-articles/mysql_db.md)
 
-第 4 篇：[史上最简单的 MySQL 教程（四）](http://blog.csdn.net/qq_35246620/article/details/70941728)
+第 4 篇：[史上最简单的 MySQL 教程（四）「SQL 基本操作 之 库操作」](https://github.com/guobinhit/mysql-tutorial/blob/master/mysql-articles/sql-database.md)
 
-第 5 篇：[史上最简单的 MySQL 教程（五）](http://blog.csdn.net/qq_35246620/article/details/70945890)
+第 5 篇：[史上最简单的 MySQL 教程（五）「SQL 基本操作 之 表操作」](https://github.com/guobinhit/mysql-tutorial/blob/master/mysql-articles/sql-table.md)
+
+第 6 篇：[史上最简单的 MySQL 教程（六）「SQL 基本操作 之 数据操作」](https://github.com/guobinhit/mysql-tutorial/blob/master/mysql-articles/sql-data.md)
+
 
 ----------
 此外，附上一句格言，望共勉：**好学若饥，谦卑若愚。**
