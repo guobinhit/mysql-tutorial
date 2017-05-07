@@ -110,5 +110,6 @@ drop table + 表1, 表2 ... ;
 
 **温馨提示**：用符号`[]`括起来的内容，表示可选项；符号`+`，则表示连接的意思。
 
+
 ----------
 ———— ☆☆☆ —— [返回 -> 史上最简单的 MySQL 教程 <- 目录](https://github.com/guobinhit/mysql-tutorial/blob/master/README.md) —— ☆☆☆ ————
