@@ -17,6 +17,10 @@
 
 第 7 篇：[史上最简单的 MySQL 教程（七）「中文数据问题」](https://github.com/guobinhit/mysql-tutorial/blob/master/mysql-articles/chinese-data.md)
 
+第 8 篇：[史上最简单的 MySQL 教程（八）「校对集问题」](https://github.com/guobinhit/mysql-tutorial/blob/master/mysql-articles/collate.md)
+
+
+
 
 ----------
 此外，附上一句格言，望共勉：**好学若饥，谦卑若愚。**
