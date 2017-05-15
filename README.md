@@ -19,6 +19,12 @@
 
 第 8 篇：[史上最简单的 MySQL 教程（八）「校对集问题」](https://github.com/guobinhit/mysql-tutorial/blob/master/mysql-articles/collate.md)
 
+第 9 篇：[史上最简单的 MySQL 教程（九）「列类型 之 数值型」](https://github.com/guobinhit/mysql-tutorial/blob/master/mysql-articles/column-type-data.md)
+
+第 10 篇：[史上最简单的 MySQL 教程（十）「列类型 之 日期时间型」](https://github.com/guobinhit/mysql-tutorial/blob/master/mysql-articles/column-type-date.md)
+
+第 11 篇：[史上最简单的 MySQL 教程（十一）「列类型 之 字符串型」](https://github.com/guobinhit/mysql-tutorial/blob/master/mysql-articles/column-type-string.md)
+
 
 
 
