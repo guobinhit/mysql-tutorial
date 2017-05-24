@@ -25,6 +25,9 @@
 
 第 11 篇：[史上最简单的 MySQL 教程（十一）「列类型 之 字符串型」](https://github.com/guobinhit/mysql-tutorial/blob/master/mysql-articles/column-type-string.md)
 
+第 12 篇：[史上最简单的 MySQL 教程（十二）「记录长度」](https://github.com/guobinhit/mysql-tutorial/blob/master/mysql-articles/record-length.md)
+
+
 
 
 
