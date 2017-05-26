@@ -29,6 +29,8 @@
 
 第 13 篇：[史上最简单的 MySQL 教程（十三）「列属性 之 空属性、列描述和默认值」](https://github.com/guobinhit/mysql-tutorial/blob/master/mysql-articles/column-null-comment-default.md)
 
+第 14 篇：[史上最简单的 MySQL 教程（十四）「列属性 之 主键」](https://github.com/guobinhit/mysql-tutorial/blob/master/mysql-articles/primarykey.md)
+
 
 
 
