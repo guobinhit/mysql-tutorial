@@ -31,6 +31,8 @@
 
 第 14 篇：[史上最简单的 MySQL 教程（十四）「列属性 之 主键」](https://github.com/guobinhit/mysql-tutorial/blob/master/mysql-articles/primarykey.md)
 
+第 15 篇：[史上最简单的 MySQL 教程（十五）「列属性 之 自动增长」](https://github.com/guobinhit/mysql-tutorial/blob/master/mysql-articles/increment.md)
+
 
 
 
