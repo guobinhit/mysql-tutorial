@@ -136,4 +136,4 @@ alter table my_auto modify id int primary key;
 **温馨提示**：符号`+`表示连接的意思。
 
 ----------
-———— ☆☆☆ —— [返回 -> 史上最简单的 MySQL 教程 <- 目录](http://blog.csdn.net/qq_35246620/article/details/70823903) —— ☆☆☆ ————
+———— ☆☆☆ —— [返回 -> 史上最简单的 MySQL 教程 <- 目录](https://github.com/guobinhit/mysql-tutorial/blob/master/README.md) —— ☆☆☆ ————
