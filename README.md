@@ -33,6 +33,10 @@
 
 第 15 篇：[史上最简单的 MySQL 教程（十五）「列属性 之 自动增长」](https://github.com/guobinhit/mysql-tutorial/blob/master/mysql-articles/increment.md)
 
+第 16 篇：[史上最简单的 MySQL 教程（十六）「列属性 之 唯一键」](https://github.com/guobinhit/mysql-tutorial/blob/master/mysql-articles/uniquekey.md)
+
+第 17 篇：[史上最简单的 MySQL 教程（十七）「索引」](https://github.com/guobinhit/mysql-tutorial/blob/master/mysql-articles/index.md)
+
 
 
 
