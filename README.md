@@ -39,12 +39,13 @@
 
 第 17 篇：[史上最简单的 MySQL 教程（十七）「索引」](https://github.com/guobinhit/mysql-tutorial/blob/master/mysql-articles/index.md)
 
+第 18 篇：[史上最简单的 MySQL 教程（十八）「关系」](https://github.com/guobinhit/mysql-tutorial/blob/master/mysql-articles/relation.md)
+
 ## 教程相关
 
-第 1 篇：
+第 1 篇：[详述 MySQL 数据库的安装及配置](https://github.com/guobinhit/mysql-tutorial/blob/master/mysql-articles/install-mysql.md)
 
-第 2 篇：
-
+第 2 篇：[详述 MySQL 数据库输入密码后闪退的问题及解决方案](https://github.com/guobinhit/mysql-tutorial/blob/master/mysql-articles/resovle-method.md)
 
 
 ----------
