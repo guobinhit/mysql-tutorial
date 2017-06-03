@@ -41,6 +41,9 @@
 
 第 18 篇：[史上最简单的 MySQL 教程（十八）「关系」](https://github.com/guobinhit/mysql-tutorial/blob/master/mysql-articles/relation.md)
 
+第 19 篇：[史上最简单的 MySQL 教程（十九）「范式」](https://github.com/guobinhit/mysql-tutorial/blob/master/mysql-articles/paradigm.md)
+
+
 ## 教程相关
 
 第 1 篇：[详述 MySQL 数据库的安装及配置](https://github.com/guobinhit/mysql-tutorial/blob/master/mysql-articles/install-mysql.md)
