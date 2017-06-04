@@ -43,6 +43,10 @@
 
 第 19 篇：[史上最简单的 MySQL 教程（十九）「范式」](https://github.com/guobinhit/mysql-tutorial/blob/master/mysql-articles/paradigm.md)
 
+第 20 篇：[史上最简单的 MySQL 教程（二十）「数据的高级操作 之 主键冲突」](https://github.com/guobinhit/mysql-tutorial/blob/master/mysql-articles/duplicate-primary-key.md)
+
+第 21 篇：[史上最简单的 MySQL 教程（二十一）「数据的高级操作 之 蠕虫复制」](https://github.com/guobinhit/mysql-tutorial/blob/master/mysql-articles/worm-copy.md)
+
 
 ## 教程相关
 
