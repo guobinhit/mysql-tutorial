@@ -47,6 +47,10 @@
 
 第 21 篇：[史上最简单的 MySQL 教程（二十一）「数据的高级操作 之 蠕虫复制」](https://github.com/guobinhit/mysql-tutorial/blob/master/mysql-articles/worm-copy.md)
 
+第 22 篇：[史上最简单的 MySQL 教程（二十二）「数据的高级操作 之 更新 & 删除」](https://github.com/guobinhit/mysql-tutorial/blob/master/mysql-articles/updata-and-delete.md)
+
+第 23 篇：[史上最简单的 MySQL 教程（二十三）「数据的高级操作 之 查询（上）」](https://github.com/guobinhit/mysql-tutorial/blob/master/mysql-articles/select-one.md)
+
 
 ## 教程相关
 
