@@ -55,6 +55,8 @@
 
 第 25 篇：[史上最简单的 MySQL 教程（二十五）「数据的高级操作 之 查询（下）」](https://github.com/guobinhit/mysql-tutorial/blob/master/mysql-articles/select-three.md)
 
+第 26 篇：[史上最简单的 MySQL 教程（二十六）「连接查询（上）」](http://blog.csdn.net/qq_35246620/article/details/74999220)
+
 
 ## 教程相关
 
