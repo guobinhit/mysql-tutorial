@@ -53,6 +53,8 @@
 
 第 24 篇：[史上最简单的 MySQL 教程（二十四）「数据的高级操作 之 查询（中）」](https://github.com/guobinhit/mysql-tutorial/blob/master/mysql-articles/select-two.md)
 
+第 25 篇：[史上最简单的 MySQL 教程（二十五）「数据的高级操作 之 查询（下）」](https://github.com/guobinhit/mysql-tutorial/blob/master/mysql-articles/select-three.md)
+
 
 ## 教程相关
 
