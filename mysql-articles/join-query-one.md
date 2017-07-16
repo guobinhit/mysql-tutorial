@@ -91,4 +91,4 @@ select s.*,c.id as c_id,c.grade as c_grade,room from student as s inner join cla
 
 
 ----------
-———— ☆☆☆ —— [返回 -> 史上最简单的 MySQL 教程 <- 目录](http://blog.csdn.net/qq_35246620/article/details/70823903) —— ☆☆☆ ————
+———— ☆☆☆ —— [返回 -> 史上最简单的 MySQL 教程 <- 目录](https://github.com/guobinhit/mysql-tutorial/blob/master/README.md) —— ☆☆☆ ————
