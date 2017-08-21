@@ -59,6 +59,10 @@
 
 第 27 篇：[史上最简单的 MySQL 教程（二十七）「连接查询（下）」](https://github.com/guobinhit/mysql-tutorial/blob/master/mysql-articles/join-query-two.md)
 
+第 28 篇：[史上最简单的 MySQL 教程（二十八）「外键（上）」](https://github.com/guobinhit/mysql-tutorial/blob/master/mysql-articles/foreign-key-one.md)
+
+第 29 篇：[史上最简单的 MySQL 教程（二十九）「外键（下）」](https://github.com/guobinhit/mysql-tutorial/blob/master/mysql-articles/foreign-key-two.md)
+
 
 ## 教程相关
 
