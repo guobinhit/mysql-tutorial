@@ -63,6 +63,12 @@
 
 第 29 篇：[史上最简单的 MySQL 教程（二十九）「外键（下）」](https://github.com/guobinhit/mysql-tutorial/blob/master/mysql-articles/foreign-key-two.md)
 
+第 30 篇：[史上最简单的 MySQL 教程（三十）「联合查询」](https://github.com/guobinhit/mysql-tutorial/blob/master/mysql-articles/union.md)
+
+第 31 篇：[史上最简单的 MySQL 教程（三十一）「子查询（上）」](https://github.com/guobinhit/mysql-tutorial/blob/master/mysql-articles/sub_query_one.md)
+
+第 32 篇：[史上最简单的 MySQL 教程（三十二）「子查询（下）」](https://github.com/guobinhit/mysql-tutorial/blob/master/mysql-articles/sub_query_two.md)
+
 
 ## 教程相关
 
