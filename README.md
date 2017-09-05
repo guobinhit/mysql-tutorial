@@ -69,6 +69,8 @@
 
 第 32 篇：[史上最简单的 MySQL 教程（三十二）「子查询（下）」](https://github.com/guobinhit/mysql-tutorial/blob/master/mysql-articles/sub_query_two.md)
 
+第 33 篇：[史上最简单的 MySQL 教程（三十三）「视图（上）」](https://github.com/guobinhit/mysql-tutorial/blob/master/mysql-articles/view-one.md)
+
 
 ## 教程相关
 
