@@ -71,6 +71,8 @@
 
 第 33 篇：[史上最简单的 MySQL 教程（三十三）「视图（上）」](https://github.com/guobinhit/mysql-tutorial/blob/master/mysql-articles/view-one.md)
 
+第 34 篇：[史上最简单的 MySQL 教程（三十四）「视图（下）」](https://github.com/guobinhit/mysql-tutorial/blob/master/mysql-articles/view-two.md)
+
 
 ## 教程相关
 
