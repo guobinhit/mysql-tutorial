@@ -73,12 +73,16 @@
 
 第 34 篇：[史上最简单的 MySQL 教程（三十四）「视图（下）」](https://github.com/guobinhit/mysql-tutorial/blob/master/mysql-articles/view-two.md)
 
+第 35 篇：[史上最简单的 MySQL 教程（三十五）「数据备份与还原（上）」](https://github.com/guobinhit/mysql-tutorial/blob/master/mysql-articles/backup-one.md)
+
 
 ## 教程相关
 
 第 1 篇：[详述 MySQL 数据库的安装及配置](https://github.com/guobinhit/mysql-tutorial/blob/master/mysql-articles/install-mysql.md)
 
 第 2 篇：[详述 MySQL 数据库输入密码后闪退的问题及解决方案](https://github.com/guobinhit/mysql-tutorial/blob/master/mysql-articles/resovle-method.md)
+
+第 3 篇：[详述查看 MySQL 数据文件存储位置的方法](https://github.com/guobinhit/mysql-tutorial/blob/master/mysql-articles/datafile.md)
 
 
 ----------
