@@ -75,9 +75,9 @@
 
 第 35 篇：[史上最简单的 MySQL 教程（三十五）「数据备份与还原（上）」](https://github.com/guobinhit/mysql-tutorial/blob/master/mysql-articles/backup-one.md)
 
-第 36 篇：[史上最简单的 MySQL 教程（三十六）「数据备份与还原（中）」」](https://github.com/guobinhit/mysql-tutorial/blob/master/mysql-articles/backup-two.md)
+第 36 篇：[史上最简单的 MySQL 教程（三十六）「数据备份与还原（中）」](https://github.com/guobinhit/mysql-tutorial/blob/master/mysql-articles/backup-two.md)
 
-第 37 篇：[史上最简单的 MySQL 教程（三十七）「数据备份与还原（下）」」](https://github.com/guobinhit/mysql-tutorial/blob/master/mysql-articles/backup-three.md)
+第 37 篇：[史上最简单的 MySQL 教程（三十七）「数据备份与还原（下）」](https://github.com/guobinhit/mysql-tutorial/blob/master/mysql-articles/backup-three.md)
 
 
 ## 教程相关
