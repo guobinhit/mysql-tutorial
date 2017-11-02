@@ -138,7 +138,7 @@ select * into outfile 'D:/CoderLife/testMySQL/class.txt' from class;
 
 > **ERROR 1290 (HY000)**: The MySQL server is running with the –secure-file-priv option so it cannot execute this statement.
 
-这个错误，可以通过查看「[详述 MySQL 导出数据遇到 secure-file-priv 的问题](https://github.com/guobinhit/mysql-tutorial/blob/master/mysql-articles/secure.md)」进行解决。
+这个错误，可以通过查看「[详述 MySQL 导出数据遇到 secure-file-priv 的问题](https://github.com/guobinhit/mysql-tutorial/blob/master/articles/secure.md)」进行解决。
 
 为了验证是否真的将`class`表中的数据导出到指定位置，我们可以到该路径下进行确认：
 
