@@ -5,35 +5,35 @@
 
 ## 目录
 
-第 1 篇：[史上最简单的 MySQL 教程（一）「数据库」](https://github.com/guobinhit/mysql-tutorial/blob/master/articles/database.md)
+第 1 篇：[数据库](https://github.com/guobinhit/mysql-tutorial/blob/master/articles/database.md)
 
-第 2 篇：[史上最简单的 MySQL 教程（二）「关系型数据库」](https://github.com/guobinhit/mysql-tutorial/blob/master/articles/relation-db.md)
+第 2 篇：[关系型数据库](https://github.com/guobinhit/mysql-tutorial/blob/master/articles/relation-db.md)
 
-第 3 篇：[史上最简单的 MySQL 教程（三）「 MySQL 数据库」](https://github.com/guobinhit/mysql-tutorial/blob/master/articles/mysql_db.md)
+第 3 篇：[MySQL 数据库](https://github.com/guobinhit/mysql-tutorial/blob/master/articles/mysql_db.md)
 
-第 4 篇：[史上最简单的 MySQL 教程（四）「SQL 基本操作」](https://github.com/guobinhit/mysql-tutorial/blob/master/articles/sql-operation.md)
+第 4 篇：[SQL 基本操作](https://github.com/guobinhit/mysql-tutorial/blob/master/articles/sql-operation.md)
 
-第 5 篇：[史上最简单的 MySQL 教程（五）「中文数据问题」](https://github.com/guobinhit/mysql-tutorial/blob/master/articles/chinese-data.md)
+第 5 篇：[中文数据问题](https://github.com/guobinhit/mysql-tutorial/blob/master/articles/chinese-data.md)
 
-第 6 篇：[史上最简单的 MySQL 教程（六）「校对集问题」](https://github.com/guobinhit/mysql-tutorial/blob/master/articles/collate.md)
+第 6 篇：[校对集问题](https://github.com/guobinhit/mysql-tutorial/blob/master/articles/collate.md)
 
-第 7 篇：[史上最简单的 MySQL 教程（七）「列类型」](https://github.com/guobinhit/mysql-tutorial/blob/master/articles/column-type.md)
+第 7 篇：[列类型](https://github.com/guobinhit/mysql-tutorial/blob/master/articles/column-type.md)
 
-第 8 篇：[史上最简单的 MySQL 教程（八）「记录长度」](https://github.com/guobinhit/mysql-tutorial/blob/master/articles/record-length.md)
+第 8 篇：[记录长度](https://github.com/guobinhit/mysql-tutorial/blob/master/articles/record-length.md)
 
-第 9 篇：[史上最简单的 MySQL 教程（九）「列属性 之 空属性、列描述和默认值」](https://github.com/guobinhit/mysql-tutorial/blob/master/articles/column-null-comment-default.md)
+第 9 篇：[列属性 之 空属性、列描述和默认值](https://github.com/guobinhit/mysql-tutorial/blob/master/articles/column-null-comment-default.md)
 
-第 10 篇：[史上最简单的 MySQL 教程（十）「列属性 之 主键」](https://github.com/guobinhit/mysql-tutorial/blob/master/articles/primarykey.md)
+第 10 篇：[列属性 之 主键](https://github.com/guobinhit/mysql-tutorial/blob/master/articles/primarykey.md)
 
-第 11 篇：[史上最简单的 MySQL 教程（十一）「列属性 之 自动增长」](https://github.com/guobinhit/mysql-tutorial/blob/master/articles/increment.md)
+第 11 篇：[列属性 之 自动增长](https://github.com/guobinhit/mysql-tutorial/blob/master/articles/increment.md)
 
-第 12 篇：[史上最简单的 MySQL 教程（十二）「列属性 之 唯一键」](https://github.com/guobinhit/mysql-tutorial/blob/master/articles/uniquekey.md)
+第 12 篇：[列属性 之 唯一键](https://github.com/guobinhit/mysql-tutorial/blob/master/articles/uniquekey.md)
 
-第 13 篇：[史上最简单的 MySQL 教程（十三）「索引」](https://github.com/guobinhit/mysql-tutorial/blob/master/articles/index.md)
+第 13 篇：[索引](https://github.com/guobinhit/mysql-tutorial/blob/master/articles/index.md)
 
-第 14 篇：[史上最简单的 MySQL 教程（十四）「关系」](https://github.com/guobinhit/mysql-tutorial/blob/master/articles/relation.md)
+第 14 篇：[关系](https://github.com/guobinhit/mysql-tutorial/blob/master/articles/relation.md)
 
-第 15 篇：[史上最简单的 MySQL 教程（十五）「范式」](https://github.com/guobinhit/mysql-tutorial/blob/master/articles/paradigm.md)
+第 15 篇：[范式](https://github.com/guobinhit/mysql-tutorial/blob/master/articles/paradigm.md)
 
 第 16 篇：[史上最简单的 MySQL 教程（十六）「数据的高级操作 之 主键冲突」](https://github.com/guobinhit/mysql-tutorial/blob/master/articles/duplicate-primary-key.md)
 
@@ -47,7 +47,7 @@
 
 第 21 篇：[史上最简单的 MySQL 教程（二十一）「外键」](https://github.com/guobinhit/mysql-tutorial/blob/master/articles/foreign-key.md)
 
-第 22 篇：[史上最简单的 MySQL 教程（二十二）「联合查询」](https://github.com/guobinhit/mysql-tutorial/blob/master/mysql-articles/union.md)
+第 22 篇：[史上最简单的 MySQL 教程（二十二）「联合查询」](https://github.com/guobinhit/mysql-tutorial/blob/master/articles/union.md)
 
 第 23 篇：[史上最简单的 MySQL 教程（二十三）「子查询」](https://github.com/guobinhit/mysql-tutorial/blob/master/articles/sub_query.md)
 

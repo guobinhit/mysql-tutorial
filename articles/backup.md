@@ -73,7 +73,7 @@ select * from my_myisam;
 - `my_myisam.MYD`：存储表的数据；
 - `my_myisam.MYI`：存储表的索引。
 
-现在，我们将这三个文件复制到`testoo`数据库（至于如何找到 MySQL 数据文件的存储位置，可以参考[详述查看 MySQL 数据文件存储位置的方法](https://github.com/guobinhit/mysql-tutorial/blob/master/mysql-articles/datafile.md)）：
+现在，我们将这三个文件复制到`testoo`数据库（至于如何找到 MySQL 数据文件的存储位置，可以参考[详述查看 MySQL 数据文件存储位置的方法](https://github.com/guobinhit/mysql-tutorial/blob/master/articles/datafile.md)）：
 
 ![3](http://img.blog.csdn.net/20171001125843845)
 
