@@ -66,6 +66,8 @@
 
 - 第 27 篇：[事务（上）](https://github.com/guobinhit/mysql-tutorial/blob/master/articles/thing-one.md)
 
+- 第 28 篇：[事务（下）](https://github.com/guobinhit/mysql-tutorial/blob/master/articles/thing-.md)
+
 
 ## 性能优化
 
