@@ -1,4 +1,4 @@
-# 史上最简单的 MySQL 教程（三十九）「事务（下）」
+# 史上最简单的 MySQL 教程（二十八）「事务（下）」
 
 > **温馨提示**：在「[事务（上）](https://github.com/guobinhit/mysql-tutorial/blob/master/articles/thing-one.md)」中，我们已经了解了如何在 MySQL 中开启事务，以及事务的一些基本操作。在本文中，我们将进一步学习事务的知识，包括事务原理、自动事务、回滚点和事务特性等。
 
