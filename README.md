@@ -68,6 +68,9 @@
 
 - 第 28 篇：[事务（下）](https://github.com/guobinhit/mysql-tutorial/blob/master/articles/thing-two.md)
 
+- 第 29 篇：[数据库变量](https://github.com/guobinhit/mysql-tutorial/blob/master/articles/database-variable.md)
+
+
 
 ## 性能优化
 
