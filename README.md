@@ -70,7 +70,7 @@
 
 - 第 29 篇：[数据库变量](https://github.com/guobinhit/mysql-tutorial/blob/master/articles/database-variable.md)
 
-
+- 第 30 篇：[触发器](https://github.com/guobinhit/mysql-tutorial/blob/master/articles/trigger.md)
 
 ## 性能优化
 
