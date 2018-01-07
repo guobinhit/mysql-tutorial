@@ -72,6 +72,10 @@
 
 - 第 30 篇：[触发器](https://github.com/guobinhit/mysql-tutorial/blob/master/articles/trigger.md)
 
+- 第 31 篇：[代码执行结构](https://github.com/guobinhit/mysql-tutorial/blob/master/articles/code-execution-structure.md)
+
+
+
 ## 性能优化
 
 - 待续 ... ...
