@@ -74,6 +74,10 @@
 
 - 第 31 篇：[代码执行结构](https://github.com/guobinhit/mysql-tutorial/blob/master/articles/code-execution-structure.md)
 
+- 第 32 篇：[函数](https://github.com/guobinhit/mysql-tutorial/blob/master/articles/function.md)
+
+- 第 33 篇：[存储结构](https://github.com/guobinhit/mysql-tutorial/blob/master/articles/procedure.md)
+
 
 
 ## 性能优化
