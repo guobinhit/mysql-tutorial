@@ -13,7 +13,7 @@
 
 查看（全部）校对集 --> 基本语法：`show collation;`
 
-![10](http://img.blog.csdn.net/20170505184606504)
+![show-collation](https://github.com/guobinhit/mysql-tutorial/blob/master/images/collate/show-collation.png)
 
 如上图所示，MySQL 数据库支持百多种校对集。
 
@@ -31,7 +31,7 @@ create table my_collate_ci(
 
 ```
 
-![11](http://img.blog.csdn.net/20170505185330045)
+![create-collate-bin-ci](https://github.com/guobinhit/mysql-tutorial/blob/master/images/collate/create-collate-bin-ci.png)
 
 如上图所示，咱们创建了两张表，分别为`my_collate_bin`和`my_collate_ci`，其校对集分别为`_bin`和`_ci`. 然后，分别向这两张表中添加数据：
 
@@ -48,7 +48,7 @@ insert into my_collate_ci values ('a'),('A'),('B'),('b');
 select * from my_collate_bin;
 select * from my_collate_ci;
 ```
-![13](http://img.blog.csdn.net/20170505190118166)
+![select-collate-bin-ci](https://github.com/guobinhit/mysql-tutorial/blob/master/images/collate/select-collate-bin-ci.png)
 
 下面，咱们根据表中的某个字段（在这里`my_collate_bin`和`my_collate_ci`都仅有一个字段）进行排序，其基本语法为：
 
@@ -63,7 +63,7 @@ select * from my_collate_bin order by name;
 select * from my_collate_ci order by name;
 ```
 
-![14](http://img.blog.csdn.net/20170505190700955)
+![order-show](https://github.com/guobinhit/mysql-tutorial/blob/master/images/collate/order-show.png)
 
 如上图所示，显然校对集生效啦！
 
