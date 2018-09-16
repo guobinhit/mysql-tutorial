@@ -21,7 +21,7 @@
 show character set;
 ```
 
-![1](http://img.blog.csdn.net/20170505141901715)
+![show-character-set](https://github.com/guobinhit/mysql-tutorial/blob/master/images/chinese-data/show-character-set.png)
 
 通过以上查询，咱们会发现：**服务器是万能的，其支持所有字符集。**
 
@@ -31,7 +31,7 @@ show character set;
 -- 查看服务器默认的对外处理的字符集
 show variables like 'character_set%'; 
 ```
-![5](http://img.blog.csdn.net/20170505145310466)
+![show-variables](https://github.com/guobinhit/mysql-tutorial/blob/master/images/chinese-data/show-variables.png)
 
  - 标注1：服务器默认的客户端传来的数据字符集为`utf8`；
  - 标注2：连接层字符集为`utf8`；
@@ -42,7 +42,7 @@ show variables like 'character_set%';
 
 那么反过来，咱们在通过客户端的属性查看客户端支持的字符集：
 
-![3](http://img.blog.csdn.net/20170505142119893)
+![mysql-command-line-client](https://github.com/guobinhit/mysql-tutorial/blob/master/images/chinese-data/mysql-command-line-client.png)
 
 显然，咱们已经找到了问题的根源，确实是：**客户端支持的字符集为`gbk`，而服务器默认的对外处理的字符集为`utf8`，因此产生矛盾。**
 
@@ -62,7 +62,7 @@ set character_set_client = gbk;
 set character_set_results = gbk;
 ```
 
-![4](http://img.blog.csdn.net/20170505143557398)
+![select-from-student](https://github.com/guobinhit/mysql-tutorial/blob/master/images/chinese-data/select-from-student.png)
 
 如上图所示，向服务器插入中文数据的问题已经解决啦！
 
