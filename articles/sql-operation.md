@@ -34,7 +34,7 @@ set names gbk;
 create database 北京 charset gbk;
 ```
 
-![1](http://img.blog.csdn.net/20170503130944273)
+![set-name-gbk](https://github.com/guobinhit/mysql-tutorial/blob/master/images/sql-operation/set-name-gbk.png)
 
 **2 查询数据库**
 
