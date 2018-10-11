@@ -6,7 +6,7 @@
 
 在 SQL 中，将数据类型分成了三大类，分别为：**数值型、字符串型和日期时间型。**
 
-![1](http://img.blog.csdn.net/20170505201016682)
+![column-type-info](https://github.com/guobinhit/mysql-tutorial/blob/master/images/column-type/column-type-info.png)
 
 对于数值型数据，可以进一步将其划分为**整数型**和**小数型**。
 
@@ -33,7 +33,7 @@ create table my_int(
 )charset utf8;
 ```
 
-![2](http://img.blog.csdn.net/20170505214100825)
+![create-table-myint](https://github.com/guobinhit/mysql-tutorial/blob/master/images/column-type/create-table-myint.png)
 
 如上图所示，咱们已经成功创建`my_int`表，再插入数据：
 
@@ -44,7 +44,7 @@ insert into my_int values ('a','b','c','d');
 insert into my_int values (255,2,3,4);
 ```
 
-![3](http://img.blog.csdn.net/20170505214735859)
+![insert-myint](https://github.com/guobinhit/mysql-tutorial/blob/master/images/column-type/insert-myint.png)
 
 如上图所示，通过列类型，咱们可以限定插入数据的类型以及长度范围。
 
@@ -54,7 +54,7 @@ insert into my_int values (255,2,3,4);
 -- 在 my_int 表中，添加 int_5 字段，设置其数据类型为 tinyint unsigned
 alter table my_int add int_5 tinyint unsigned;
 ```
-![4](http://img.blog.csdn.net/20170505215530129)
+![alter-myint](https://github.com/guobinhit/mysql-tutorial/blob/master/images/column-type/alter-myint.png)
 
 如上图所示，添加`int_5`字段成功，继续插入数据：
 
@@ -63,11 +63,11 @@ alter table my_int add int_5 tinyint unsigned;
 insert into my_int values (1,2,3,4,255);
 ```
 
-![5](http://img.blog.csdn.net/20170505215905568)
+![null-myint](https://github.com/guobinhit/mysql-tutorial/blob/master/images/column-type/null-myint.png)
 
 如上图所示，当咱们将`tinyint`限定为`unsigned`之后，已经可以插入`0~255`之间的任何整数啦！但是，回过头来，让咱们仔细看看下面这张图：
 
-![6](http://img.blog.csdn.net/20170505220452057)
+![field-type-null-key](https://github.com/guobinhit/mysql-tutorial/blob/master/images/column-type/field-type-null-key.png)
 
 通过观察上面这张图，咱们会发现：**每个字段的数据类型后面都会跟着一对括号，并且里面含有数字。**这些数字啊，其实并没有什么特别的含义，只是表示数据的显示宽度。实际上，咱们可以修改显示的宽度，但是这种修改并不会改变数据本身的大小。
 
@@ -80,7 +80,7 @@ insert into my_int values (1,2,3,4,255);
 alter table my_int add int_6(3) tinyint zerofill;
 ```
 
-![7](http://img.blog.csdn.net/20170505221652339)
+![zerofill-myint](https://github.com/guobinhit/mysql-tutorial/blob/master/images/column-type/zerofill-myint.png)
 
 再插入数据，进行测试：
 
@@ -89,7 +89,7 @@ alter table my_int add int_6(3) tinyint zerofill;
 insert into my_int values (1,2,3,4,5,6);
 ```
 
-![8](http://img.blog.csdn.net/20170505222047969)
+![two-null-myint](https://github.com/guobinhit/mysql-tutorial/blob/master/images/column-type/two-null-myint.png)
 
 如上图所示，**零填充的意义**：在于保证数据的格式。
 
@@ -130,7 +130,7 @@ insert into my_float values (20151120,123456789.99,9999.99);
 insert into my_float values (5211314,123456.99,99.99999);
 ```
 
-![1](http://img.blog.csdn.net/20170506102816519)
+![create-table-myfloat](https://github.com/guobinhit/mysql-tutorial/blob/master/images/column-type/create-table-myfloat.png)
 
 如上图所示，咱们的结论得到了验证。
 
@@ -156,7 +156,7 @@ insert into my_decimal values (123456789.99,2015.1314);
 insert into my_decimal values (123456.99,2015.1314);
 ```
 
-![2](http://img.blog.csdn.net/20170506105942273)
+![create-table-mydecimal](https://github.com/guobinhit/mysql-tutorial/blob/master/images/column-type/create-table-mydecimal.png)
 
 如上图所示，咱们的结论同样得到了验证。
 
@@ -194,7 +194,7 @@ insert into my_date values ('2017-05-06 13:15:00','2017-05-06','-113:15:00','201
 insert into my_date values ('2017-05-06 13:15:00','2017-05-06','-2 13:15:00','2017-05-06 13:15:00',70);
 ```
 
-![3](http://img.blog.csdn.net/20170506132014635)
+![create-table-mydate](https://github.com/guobinhit/mysql-tutorial/blob/master/images/column-type/create-table-mydate.png)
 
 如上图所示，以上 3 条记录已经插入成功，接下来，咱们再来验证更新记录时，时间戳类型的字段`d4`是否会自动更新：
 
@@ -203,7 +203,7 @@ insert into my_date values ('2017-05-06 13:15:00','2017-05-06','-2 13:15:00','20
 update my_date set d1 = '2017-05-06 13:24:00' where d5 = 1970;
 ```
 
-![5](http://img.blog.csdn.net/20170506132904083)
+![update-mydate](https://github.com/guobinhit/mysql-tutorial/blob/master/images/column-type/update-mydate.png)
 
 如上图所示，显然咱们的结论全部得到了验证。
 
@@ -261,7 +261,7 @@ create table my_enum(
 )charset utf8;
 ```
 
-![2](http://img.blog.csdn.net/20170521214843424)
+![create-table-myenum](https://github.com/guobinhit/mysql-tutorial/blob/master/images/column-type/create-table-myenum.png)
 
 再执行如下 SQL 语句，向表`my_enum`中插入测试数据：
 
@@ -270,7 +270,7 @@ create table my_enum(
 insert into my_enum values ('男'),('女'),('保密');
 insert into my_enum values ('male');
 ```
-![3](http://img.blog.csdn.net/20170521215211842)
+![insert-myenum](https://github.com/guobinhit/mysql-tutorial/blob/master/images/column-type/insert-myenum.png)
 
 通过上面的测试，咱们可以发现使用枚举字符串有一个好处，那就是：**规范数据格式，插入表中的数据只能是事先定义好的某个数据。**
 
@@ -283,7 +283,7 @@ insert into my_enum values ('male');
 select gender + 0,gender from my_enum;
 ```
 
-![4](http://img.blog.csdn.net/20170521220113393)
+![select-myenum](https://github.com/guobinhit/mysql-tutorial/blob/master/images/column-type/select-myenum.png)
 
 观察上述结果，咱们可以找出枚举元素的实际规律，即按照元素出现的顺序，从`1`开始编号。接下来，咱们再来了解**枚举的原理**：
 
@@ -309,7 +309,7 @@ create table my_set(
 )charset utf8;
 ```
 
-![5](http://img.blog.csdn.net/20170521223557192)
+![create-table-myset](https://github.com/guobinhit/mysql-tutorial/blob/master/images/column-type/create-table-myset.png)
 
 再执行如下 SQL 语句，向表`my_set`中插入测试数据：
 ```
@@ -318,7 +318,7 @@ insert into my_set values ('电影,美食,宠物');
 insert into my_set values (3);
 ```
 
-![6](http://img.blog.csdn.net/20170521223912147)
+![insert-myset](https://github.com/guobinhit/mysql-tutorial/blob/master/images/column-type/insert-myset.png)
 
 再执行如下 SQL 语句，查看表`my_set`中的数据：
 
@@ -327,7 +327,7 @@ insert into my_set values (3);
 select hobby + 0,hobby from my_set;
 ```
 
-![7](http://img.blog.csdn.net/20170521224106226)
+![select-myset](https://github.com/guobinhit/mysql-tutorial/blob/master/images/column-type/select-myset.png)
 
 观察上面的结果，相信大部分童鞋也懵啦！对于`3`还好理解，`3=2+1`，对应于集合中数据的编号，也正是`音乐`和`电影`；但是`74`是什么鬼啊？在此，咱们不妨将集合（`'音乐','电影','旅行','美食','摄影','运动','宠物'`）中的元素选中的记为`1`，没有选中的记为`0`，表示成二进制，也就是：
 
@@ -351,7 +351,7 @@ insert into my_set values ('旅行,电影,美食');
 
 上述两个 SQL 语句会产生相同的结果：
 
-![8](http://img.blog.csdn.net/20170521230456356)
+![insert-select-myset](https://github.com/guobinhit/mysql-tutorial/blob/master/images/column-type/insert-select-myset.png)
 
 如上图所示，显然咱们的结论得到了验证。
 
