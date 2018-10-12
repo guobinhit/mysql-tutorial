@@ -19,7 +19,7 @@ create table my_gbk(
 )charset gbk;
 ```
 
-![1](http://img.blog.csdn.net/20170522161909823)
+![create-table-myutf8](https://github.com/guobinhit/mysql-tutorial/blob/master/images/record-length/create-table-myutf8.png)
 
 观察上面的结果，发现咱们定义的字段`name`的长度超过限制啦，并且提示了其在`utf8`和`gbk`字符集下各自的最大值。那么，咱们修改 SQL 语句如下，并再次执行：
 
@@ -34,7 +34,7 @@ create table my_gbk(
 )charset gbk;
 ```
 
-![2](http://img.blog.csdn.net/20170522162320934)
+![myutf8-mygbk](https://github.com/guobinhit/mysql-tutorial/blob/master/images/record-length/myutf8-mygbk.png)
 
 观察上面的执行结果，好吧，仍然在报错，为什么呢？观察如下 SQL 语句，并执行：
 
@@ -49,7 +49,7 @@ create table my_gbk(
 )charset gbk;
 ```
 
-![3](http://img.blog.csdn.net/20170522163928644)
+![utf8-gbk](https://github.com/guobinhit/mysql-tutorial/blob/master/images/record-length/utf8-gbk.png)
 
 如上图所示，咱们已经创建成功啦！至于什么定义字段`name`的长度为`21844`和`32766`是由于：
 
@@ -73,7 +73,7 @@ create table my_gbk1(
 )charset gbk;
 ```
 
-![4](http://img.blog.csdn.net/20170522165051589)
+![myutf81-mygbk1](https://github.com/guobinhit/mysql-tutorial/blob/master/images/record-length/myutf81-mygbk1.png)
 
 观察上面的结果，呃，竟然又出错啦！为什么啊？`65534 + 1 = 65535`，并没有超出范围啊！其实吧，之所以会出现这样的问题，是因为：**在 MySQL 的记录中，如果有任何一个字段允许为空，那么系统就会自动从整个记录中保留一个字节来存储`null`，若想释放`null`所占的字节，则必须保证所有字段都不允许为空。**
 
@@ -90,7 +90,7 @@ create table my_gbk2(
 )charset gbk;
 ```
 
-![5](http://img.blog.csdn.net/20170522165703155)
+![myutf82-mygbk2](https://github.com/guobinhit/mysql-tutorial/blob/master/images/record-length/myutf82-mygbk2.png)
 
 如上图所示，咱们已经成功创建了表`my_utf82`和`my_gbk2`. 
 
