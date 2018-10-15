@@ -22,7 +22,7 @@ create table my_class(
 )charset utf8;
 ```
 
-![6](http://img.blog.csdn.net/20170523102924169)
+![create-table-myclass](https://github.com/guobinhit/mysql-tutorial/blob/master/images/column-null-comment-default/create-table-myclass.png)
 
 ### 列描述
 
@@ -37,7 +37,7 @@ create table my_friend(
 	age tinyint not null comment '年龄'
 )charset utf8;
 ```
-![8](http://img.blog.csdn.net/20170523120146063)
+![create-table-myfriend](https://github.com/guobinhit/mysql-tutorial/blob/master/images/column-null-comment-default/create-table-myfriend.png)
 
 ### 默认值
 
@@ -54,7 +54,7 @@ create table my_default(
 )charset utf8;
 ```
 
-![9](http://img.blog.csdn.net/20170523120331562)
+![create-table-mydefault](https://github.com/guobinhit/mysql-tutorial/blob/master/images/column-null-comment-default/create-table-mydefault.png)
 
 如上图所示，在列属性`Default`中已经展示了`age`和`gender`字段的默认值，这说明咱们设置成功啦！接下来，咱们再演示如何使用默认值：
 
@@ -64,7 +64,7 @@ insert into my_default (name) values ('Charies');
 insert into my_default values ('Guo',18,default);
 ```
 
-![10](http://img.blog.csdn.net/20170523121027497)
+![insert-mydefault](https://github.com/guobinhit/mysql-tutorial/blob/master/images/column-null-comment-default/insert-mydefault.png)
 
 观察上面的 SQL 语句及执行结果，相信大家已经知道如何使用默认值啦，即不给设置默认值的字段赋值或者用`default`代替相应的字段值。
 
