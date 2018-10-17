@@ -17,7 +17,7 @@ create table my_pri1(
 	number char(10) primary key comment '学号'
 )charset utf8;
 ```
-![1](http://img.blog.csdn.net/20170523210307014)
+![create-table-mypri1](https://github.com/guobinhit/mysql-tutorial/blob/master/images/primarykey/create-table-mypri1.png)
 
 如上图所示，此方法的优点是清晰明了，缺点则是只能使用一个字段作为主键。
 
@@ -34,7 +34,7 @@ create table my_pri2(
 )charset utf8;
 ```
 
-![2](http://img.blog.csdn.net/20170523211344326)
+![create-table-mypri2](https://github.com/guobinhit/mysql-tutorial/blob/master/images/primarykey/create-table-mypri1.png)
 
 **第 3 种**：当表创建完之后，额外追加主键，可以直接追加主键，也可以通过修改表字段的属性追加主键
 
@@ -45,7 +45,7 @@ create table my_pri3(
 	name varchar(10) not null comment '课程名称'
 )charset utf8;
 ```
-![3](http://img.blog.csdn.net/20170523211827926)
+![create-table-mypri3](https://github.com/guobinhit/mysql-tutorial/blob/master/images/primarykey/create-table-mypri1.png)
 
 在这里，追加主键有两种方式，分别为：
 
@@ -53,7 +53,7 @@ create table my_pri3(
 
 - `alter table my_pri3 add primary key(course);  -- 推荐使用`
 
-![4](http://img.blog.csdn.net/20170523212240672)
+![alter-mypri3](https://github.com/guobinhit/mysql-tutorial/blob/master/images/primarykey/alter-mypri3.png)
 
 如上图所示，咱们追加主键成功。不过，想要用此方法，有一个前提，那就是：**表中对应字段的数据是不重复的，即保证唯一性**。
 
@@ -67,7 +67,7 @@ insert into my_pri3 values('MATH00123','泛函分析');
 insert into my_pri3 values('MATH00123','非线性分析');
 ```
 
-![5](http://img.blog.csdn.net/20170523213342164)
+![insert-mypri3](https://github.com/guobinhit/mysql-tutorial/blob/master/images/primarykey/insert-mypri3.png)
 
 ### 更新主键 & 删除主键
 
@@ -80,7 +80,7 @@ insert into my_pri3 values('MATH00123','非线性分析');
 -- 删除主键
 alter table my_pri3 drop primary key;
 ```
-![6](http://img.blog.csdn.net/20170523214019191)
+![desc-mypri3](https://github.com/guobinhit/mysql-tutorial/blob/master/images/primarykey/desc-mypri3.png)
 
 如上图所示，咱们已经成功删除表`my_pri3`的主键啦！想要增加主键，只需要通过前面讲的 3 种方法即可。
 
