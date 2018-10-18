@@ -19,7 +19,7 @@ create table my_auto(
 )charset utf8;
 ```
 
-![1](http://img.blog.csdn.net/20170523225451048)
+![create-table-myauto](https://github.com/guobinhit/mysql-tutorial/blob/master/images/increment/create-table-myauto.png)
 
 ### 使用自增长
 
@@ -31,7 +31,7 @@ insert into my_auto (name) values('Charies');
 insert into my_auto values(null,'Guo');
 insert into my_auto values(default,'ChariesGuo');
 ```
-![2](http://img.blog.csdn.net/20170523230214445)
+![insert-myauto](https://github.com/guobinhit/mysql-tutorial/blob/master/images/increment/insert-myauto.png)
 
 如上图所示，自增长的第一个元素默认是`1`，自增长每次都是自增`1`。此外，如果自增长对应的字段输入了值，那么自增长失效，但是下一次还是能够正确的自增长，即从取该字段的最大值`+1`.
 
@@ -41,7 +41,7 @@ insert into my_auto values(default,'ChariesGuo');
 -- 查看表的创建语句
 show create table my_auto;
 ```
-![3](http://img.blog.csdn.net/20170523230908501)
+![show-myauto](https://github.com/guobinhit/mysql-tutorial/blob/master/images/increment/show-myauto.png)
 
 如上图所示，显然在咱们之前插入的 3 条记录之后，下一次自增长是`4`，符合咱们的结论。
 
@@ -60,7 +60,7 @@ show create table my_auto;
 alter table my_auto auto_increment = 2;
 ```
 
-![4](http://img.blog.csdn.net/20170523233034847)
+![alter-myauto](https://github.com/guobinhit/mysql-tutorial/blob/master/images/increment/alter-myauto.png)
 
 如上图所示，当咱们修改自增长小于当前自增长字段中的最大值时，虽然显示 SQL 语句执行成功，但实际上并没有修改成功。下面，在执行如下 SQL 语句，进行测试：
 
@@ -69,7 +69,7 @@ alter table my_auto auto_increment = 2;
 alter table my_auto auto_increment = 5;
 ```
 
-![5](http://img.blog.csdn.net/20170523233250704)
+![alter-myauto-2](https://github.com/guobinhit/mysql-tutorial/blob/master/images/increment/alter-myauot-2.png)
 
 如上图所示，显然当咱们修改自增长大于当前自增长字段中的最大值时，修改成功。
 
@@ -81,7 +81,7 @@ alter table my_auto auto_increment = 5;
 -- 查看自增长变量
 show variables like 'auto_increment%';
 ```
-![6](http://img.blog.csdn.net/20170523234155133)
+![show-variables](https://github.com/guobinhit/mysql-tutorial/blob/master/images/increment/show-variables.png)
 
 如上图所示，其中`auto_increment_increment`表示`步长`，`auto_increment_offset`表示`初始值`.
 
@@ -96,7 +96,7 @@ show variables like 'auto_increment%';
 set auto_increment_increment = 5;
 insert into my_auto values (null,'Guobinhit');
 ```
-![7](http://img.blog.csdn.net/20170523234752168)
+![set-auto-increment](https://github.com/guobinhit/mysql-tutorial/blob/master/images/increment/set-auto-increment.png)
 
 如上图所示，咱们已经修改成功！接下来，执行如下 SQL 语句，进行测试：
 ```
@@ -105,7 +105,7 @@ insert into my_auto values (null,'Guobinhit');
 insert into my_auto values (default,'Guobinhit');
 ```
 
-![8](http://img.blog.csdn.net/20170523235047044)
+![select-myauto](https://github.com/guobinhit/mysql-tutorial/blob/master/images/increment/select-myauto.png)
 
 如上图所示，咱们插入的第一个`Guobinhit`的`id`值竟然是`6`，第二个`Guobinhit`的`id`值倒是在`6`的基础上增加了`5`为`11`正常。这个现象产生的原因是：咱们之前的修改会导致系统产生一个误差，从初始值`1`开始计算加`5`，因此第一个`Guobinhit`的`id`值是`6`. 
 
@@ -123,11 +123,11 @@ insert into my_auto values (default,'Guobinhit');
 -- 删除自增长
 alter table my_auto modify id int primary key;
 ```
-![9](http://img.blog.csdn.net/20170524000518389)
+![modify-myauto](https://github.com/guobinhit/mysql-tutorial/blob/master/images/increment/modify-myauto.png)
 
 如上图所示，呃，好吧，出错啦！这是因为表`my_auto`之前已经定义了主键，所以在执行上述 SQL 语句的时候，系统会认为咱们想要定义多个主键，自然就要报错啦！解决方法就是，去掉上述 SQL 语句中的`primary key`即可。
 
-![10](http://img.blog.csdn.net/20170524000826628)
+![alter-modify-myauto](https://github.com/guobinhit/mysql-tutorial/blob/master/images/increment/alter-modify-myauto.png)
 
 如上图所示，显然咱们已经成功删除自增长啦！
 
