@@ -19,7 +19,7 @@ create table my_unique(
 	name varchar(20) not null
 )charset utf8;
 ```
-![1](http://img.blog.csdn.net/20170524090620434)
+![create-table-myunique](https://github.com/guobinhit/mysql-tutorial/blob/master/images/uniquekey/create-table-myunique.png)
 
 **第 2 种**：在所有字段之后，增加`unique key(字段列表)`，可以设置复合唯一键
 
@@ -31,7 +31,7 @@ create table my_unique2(
 	unique key(number)	
 )charset utf8;
 ```
-![2](http://img.blog.csdn.net/20170524091144437)
+![create-table-myunique2](https://github.com/guobinhit/mysql-tutorial/blob/master/images/uniquekey/create-table-myunique2.png)
 
 观察上图，咱们可能会发现一个问题，那就是：**咱们设置的唯一键`UNI`，怎么变成了主键`PRI`啊？这是由于当唯一键满足非空条件的时候，其性质就和主键一样啦，因此在表中显示为`PRI`**. 当然，在咱们执行如下 SQL 语句的时候，其就会表现出真正的性质：
 
@@ -39,7 +39,7 @@ create table my_unique2(
 -- 查看表创建语句
 show create table my_unique2;
 ```
-![3](http://img.blog.csdn.net/20170524091651347)
+![show-create-myunique2](https://github.com/guobinhit/mysql-tutorial/blob/master/images/uniquekey/show-create-myunique2.png)
 
 **第 3 种**：在创建表之后，增加唯一键
 
@@ -52,7 +52,7 @@ create table my_unique3(
 )charset utf8;
 ```
 
-![4](http://img.blog.csdn.net/20170524092040004)
+![create-table-myunique3](https://github.com/guobinhit/mysql-tutorial/blob/master/images/uniquekey/create-table-myunique3.png)
 
 如上图所示，表`my_unique3`未设置唯一键。接下来，执行如下 SQL 语句，进行测试：
 
@@ -60,7 +60,7 @@ create table my_unique3(
 -- 增加唯一键
 alter table my_unique3 add unique key(number);
 ```
-![5](http://img.blog.csdn.net/20170524092306849)
+![alter-myunique3](https://github.com/guobinhit/mysql-tutorial/blob/master/images/uniquekey/alter-myunique3.png)
 
 如上图所示，咱们已经成功向表中增加唯一键啦！
 
@@ -73,7 +73,7 @@ alter table my_unique3 add unique key(number);
 insert into my_unique values(null,'Charies');
 insert into my_unique values(null,'Guo');
 ```
-![6](http://img.blog.csdn.net/20170524093013603)
+![insert-myunique](https://github.com/guobinhit/mysql-tutorial/blob/master/images/uniquekey/insert-myunique.png)
 
 ### 更新唯一键 & 删除唯一键
 
@@ -89,7 +89,7 @@ insert into my_unique values(null,'Guo');
 -- 删除唯一键
 alter table my_unique3 drop index number;
 ```
-![7](http://img.blog.csdn.net/20170524093806457)
+![desc-myunique3](https://github.com/guobinhit/mysql-tutorial/blob/master/images/uniquekey/desc-myunique3.png)
 
 如上图所示，显然咱们已经成功删除表中的唯一键啦！
 
