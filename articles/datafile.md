@@ -6,7 +6,7 @@
 
 - `show global variables like "%datadir%";`
 
-![8](http://img.blog.csdn.net/20171001132531497)
+![show-global-variables](https://github.com/guobinhit/mysql-tutorial/blob/master/images/datafile/show-global-variables.png)
 
 如上图所示，MySQL 的数据文件就存放在`Data`目录。至于接下来想查看具体的数据库还是表，这就看大家的心情啦！
 
