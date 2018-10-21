@@ -12,7 +12,7 @@
 
 执行上述命令，进行测试：
 
-![6](http://img.blog.csdn.net/20171001200442371)
+![show-variables](https://github.com/guobinhit/mysql-tutorial/blob/master/images/secure/show-variables.png)
 
 如上图所示，我设置的`secure-file-priv`值为`D:/CoderLife/testMySQL`，而 MySQL 默认的值为:
 
@@ -20,7 +20,7 @@
 
 我们可以通过打开`my.ini`配置文件进行查看及修改：
 
-![7](http://img.blog.csdn.net/20171001200847759)
+![my-ini](https://github.com/guobinhit/mysql-tutorial/blob/master/images/secure/my-ini.png)
 
 如上图所示，我注释了 MySQL 的默认值，并修改成自己指定的路径。实际上，在我们修改此配置文件的内容之后，例如修改了`secure-file-priv`的默认值，要想使其生效，我们必须关闭 MySQL 然后重新启动。在这里，需要我们注意的是：**关闭 MySQL 并不是指简单的用`exit`命令退出 MySQL 或者关闭 MySQL 窗口，而是关闭 MySQL 服务，然后重新启动服务**。至于如何开启和关闭 MySQL 服务，具体可以参考[详述 MySQL 数据库输入密码后闪退的问题及解决方案](https://github.com/guobinhit/mysql-tutorial/blob/master/articles/resovle-method.md)。
 
