@@ -21,7 +21,7 @@
  3. 服务和应用程序；
  4. 服务。
 
-![2](http://img.blog.csdn.net/20170523094452452)
+![computer-management](https://github.com/guobinhit/mysql-tutorial/blob/master/images/resovle-method/computer-management.png)
 
 如上图所示，在这里，咱们就可以查看 MySQL 的服务的状态啦！
 
@@ -30,11 +30,11 @@
 
 咳咳，这个容易，点击右键或者点击下图红色箭头所示的按钮启动 MySQL 服务即可。
 
-![3](http://img.blog.csdn.net/20170523094659190)
+![start-server](https://github.com/guobinhit/mysql-tutorial/blob/master/images/resovle-method/start-server.png)
 
 点击`启动`后，就让咱们重新启动 MySQL 服务端，输入密码，进行测试：
 
-![4](http://img.blog.csdn.net/20170523094903021)
+![test-mysql-client](https://github.com/guobinhit/mysql-tutorial/blob/master/images/resovle-method/test-mysql-client.png)
 
 如上图所示，显然咱们的问题已经得到了解决。
 
