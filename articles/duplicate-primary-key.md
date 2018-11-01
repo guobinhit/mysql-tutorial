@@ -16,7 +16,7 @@
 
 下面，以表`my_class`为例，进行测试：
 
-![1](http://img.blog.csdn.net/20170603202002804)
+![desc-myclass](https://github.com/guobinhit/mysql-tutorial/blob/master/images/duplicate-primary-key/desc-myclass.png)
 
 其中，`grade`为主键。
 
@@ -31,7 +31,7 @@
 insert into my_class values ('PM3527','B315');
 ```
 
-![2](http://img.blog.csdn.net/20170603202439264)
+![insert-myclass](https://github.com/guobinhit/mysql-tutorial/blob/master/images/duplicate-primary-key/insert-myclass.png)
 
 如上图所示，当主键已经存在的时候，产生主键冲突。再执行如下 SQL 语言，解决主键冲突的问题：
 
@@ -44,7 +44,7 @@ on duplicate key update
 room = 'B315';
 ```
 
-![3](http://img.blog.csdn.net/20170603202810534)
+![select-myclass](https://github.com/guobinhit/mysql-tutorial/blob/master/images/duplicate-primary-key/select-myclass.png)
 
 **第二种情况：主键冲突，选择替换操作。**
 
@@ -57,7 +57,7 @@ room = 'B315';
 insert into my_class values ('PM3528','B215');
 ```
 
-![4](http://img.blog.csdn.net/20170603203053592)
+![insert-error](https://github.com/guobinhit/mysql-tutorial/blob/master/images/duplicate-primary-key/insert-error.png)
 
 如上图所示，当主键已经存在的时候，产生主键冲突。再执行如下 SQL 语言，解决主键冲突的问题：
 
@@ -66,7 +66,7 @@ insert into my_class values ('PM3528','B215');
 replace into my_class values ('PM3528','B215');
 ```
 
-![5](http://img.blog.csdn.net/20170603203402011)
+![replace-myclass](https://github.com/guobinhit/mysql-tutorial/blob/master/images/duplicate-primary-key/replace-myclass.png)
 
 通过以上两种情况的演示，当再发生主键冲突的时候，咱们已经可以从容应对并解决啦！
 
