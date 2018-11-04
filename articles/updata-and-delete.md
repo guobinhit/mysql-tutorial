@@ -16,11 +16,11 @@ update my_copy set name = 'c' where name = 'a' limit 3;
 
 执行上述 SQL 语句前：
 
-![1](http://img.blog.csdn.net/20170625180810447)
+![select-mycopy](https://github.com/guobinhit/mysql-tutorial/blob/master/images/updata-and-delete/select-mycopy.png)
 
 执行上述 SQL 语句后：
 
-![2](http://img.blog.csdn.net/20170625180922214)
+![update-mycopy](https://github.com/guobinhit/mysql-tutorial/blob/master/images/updata-and-delete/update-mycopy.png)
 
 
 ### 删除数据
@@ -37,7 +37,7 @@ update my_copy set name = 'c' where name = 'a' limit 3;
 delete from my_copy where name = 'b' limit 10;
 ```
 
-![3](http://img.blog.csdn.net/20170625181516023)
+![delete-mycopy](https://github.com/guobinhit/mysql-tutorial/blob/master/images/updata-and-delete/delete-mycopy.png)
 
 此外，在删除记录的过程中，**如果表中存在自增长的主键，那么删除之后，自增长不会还原**。执行如下 SQL 语句，进行测试：
 
@@ -47,7 +47,7 @@ delete from student;
 show create table student;
 ```
 
-![4](http://img.blog.csdn.net/20170625182444031)
+![delete-student](https://github.com/guobinhit/mysql-tutorial/blob/master/images/updata-and-delete/delete-student.png)
 
 
 如上图所示，显然在咱们删除表`student`中的全部数据之后，`id`的自增长属性值`3`并没有发生改变，这是因为数据的删除是不会改变表结构的。如果想要还原自增长属性，思路是：**先删除表，然后重新建表**。
@@ -61,7 +61,7 @@ show create table student;
 truncate student;
 ```
 
-![5](http://img.blog.csdn.net/20170625183121678)
+![truncate-student](https://github.com/guobinhit/mysql-tutorial/blob/master/images/updata-and-delete/truncate-student.png)
 
 如上图所示，显然咱们已经测试成功啦！
 
