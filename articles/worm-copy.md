@@ -17,7 +17,7 @@
 create table my_copy like my_gbk;
 ```
 
-![6](http://img.blog.csdn.net/20170603205833948)
+![desc-mygbk](https://github.com/guobinhit/mysql-tutorial/blob/master/images/worm-copy/desc-mygbk.png)
 
 如上图所示，表`my_copy`和表`my_gbk`的表结构完成相同。
 
@@ -32,7 +32,7 @@ create table my_copy like my_gbk;
 insert into my_copy select * from my_collate_bin;
 ```
 
-![7](http://img.blog.csdn.net/20170603210620720)
+![select-mycollate](https://github.com/guobinhit/mysql-tutorial/blob/master/images/worm-copy/select-mycollate.png)
 
 如上图所示，咱们已经成功将表`my_collate_bin`中的数据复制到表`my_copy`中啦！接下来，咱们再执行如下 SQL 语句，测试蠕虫复制的效果：
 
@@ -41,7 +41,7 @@ insert into my_copy select * from my_collate_bin;
 insert into my_copy select * from my_copy;
 ```
 
-![8](http://img.blog.csdn.net/20170603210950502)
+![insert-mycopy](https://github.com/guobinhit/mysql-tutorial/blob/master/images/worm-copy/insert-mycopy.png)
 
 如上图所示，通过观察每次执行 SQL 语句后影响的列数，分别为`4`、`8`和`16`等，咱们会发现蠕虫复制的效果呈（指数）爆炸性增长。
 
