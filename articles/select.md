@@ -24,7 +24,7 @@ select all * from my_copy;
 select distinct * from my_copy;
 ```
 
-![6](http://img.blog.csdn.net/20170625210624498)
+![select-mycopy](https://github.com/guobinhit/mysql-tutorial/blob/master/images/select/select-mycopy.png)
 
 
 ### 字段别名
@@ -44,7 +44,7 @@ grade as 年级
 from student;
 ```
 
-![7](http://img.blog.csdn.net/20170625215451466)
+![use-alias](https://github.com/guobinhit/mysql-tutorial/blob/master/images/select/use-alias.png)
 
 ### 数据源
 
@@ -56,13 +56,13 @@ from student;
 
  - **基本语法**：`select * from + 表名;`
 
-![8](http://img.blog.csdn.net/20170625220806193)
+![select-student](https://github.com/guobinhit/mysql-tutorial/blob/master/images/select/select-student.png)
 
 **第 2 种**：多表数据源
 
  - **基本语法**：`select * from + 表名1,表名2...;`
 
-![9](http://img.blog.csdn.net/20170625221005836)
+![select-student-myclass](https://github.com/guobinhit/mysql-tutorial/blob/master/images/select/select-student-myclass.png)
 
 如上图所示，使用多表数据源时默认从一张表中取出一条记录去另外一张表中匹配所有记录，而且全部保留，比较浪费资源，应该尽量避免。
 
@@ -71,7 +71,7 @@ from student;
 
  - **基本语法**：`select * from + (select * from + 表名) + [as] + 别名;`
 
-![10](http://img.blog.csdn.net/20170625221630276)
+![select-union-select](https://github.com/guobinhit/mysql-tutorial/blob/master/images/select/select-union-select.png)
 
 如上图所示，数据的来源是一条查询语句，而查询语句的结果是一张二维表。
 
@@ -94,18 +94,18 @@ select * from student where id = 2 || id = 3 || id = 5;
 select * from student where id in (2,3,5); 
 ```
 
-![001](http://img.blog.csdn.net/20170627210129189)
+![select-or](https://github.com/guobinhit/mysql-tutorial/blob/master/images/select/select-or.png)
 
 ```
 -- 查询表 student 中 id 在 2 和 5 之间的记录
 select * from student where id between 2 and 5;
 ```
 
-![002](http://img.blog.csdn.net/20170627210410567)
+![select-between](https://github.com/guobinhit/mysql-tutorial/blob/master/images/select/select-between.png)
 
 如上图所示，咱们会发现：**在使用`between and`的时候，其选择的区间为闭区间，即包含端点值**。此外，`and`前面的数值必须大于等于`and`后面的数值，否则会出现空判断，例如：
 
-![003](http://img.blog.csdn.net/20170627210829379)
+![select-set](https://github.com/guobinhit/mysql-tutorial/blob/master/images/select/select-set.png)
 
 
 ### `group by`子句
@@ -121,7 +121,7 @@ select * from student where id between 2 and 5;
 select * from student group by sex;
 ```
 
-![004](http://img.blog.csdn.net/20170627211555446)
+![select-group-bysex](https://github.com/guobinhit/mysql-tutorial/blob/master/images/select/select-group-bysex.png)
 
 观察上图，咱们会发现：表`student`在分组过后，数据“丢失”啦！实际上并非如此，产生这样现象原因为：**`group by`分组的目的是为了（按分组字段）统计数据，并不是为了单纯的进行分组而分组**。为了方便统计数据，SQL 提供了一系列的统计函数，例如：
 
@@ -137,7 +137,7 @@ select * from student group by sex;
 -- 将表 student 中的数据按字段 sex 进行分组，并进行统计
 select sex,count(*),max(age),min(age),avg(age),sum(age) from student group by sex;
 ```
-![005](http://img.blog.csdn.net/20170627212554643)
+![select-count-max-min](https://github.com/guobinhit/mysql-tutorial/blob/master/images/select/select-count-max-min.png)
 
 其中，`count()`函数里面可以使用两种参数，分别为：`*`表示统计组内全部记录的数量；`字段名`表示统计对应字段的非`null`（如果某条记录中该字段的值为`null`，则不统计）记录的总数。此外，使用`group by`进行分组之后，展示的记录会根据分组的字段值进行排序，默认为升序。当然，也可以人为的设置升序和降序。
 
@@ -151,7 +151,7 @@ select sex,count(*) from student group by sex;
 select sex,count(*) from student group by sex asc;
 select sex,count(*) from student group by sex desc;
 ```
-![006](http://img.blog.csdn.net/20170627213601017)
+![select-sex-count](https://github.com/guobinhit/mysql-tutorial/blob/master/images/select/select-sex-count.png)
 
 通过观察上面数个分组示例，细心的同学会发现：咱们在之前的示例中，都是用单字段进行分组。实际上，咱们也可以使用**多字段分组**，即：**先根据一个字段进行分组，然后对分组后的结果再次按照其他字段（前提是分组后的结果中包含此字段）进行分组**。
 
@@ -162,7 +162,7 @@ select sex,count(*) from student group by sex desc;
 select *,count(*) from student group by grade,sex;
 ```
 
-![007](http://img.blog.csdn.net/20170627214720585)
+![select-by-grade-sex](https://github.com/guobinhit/mysql-tutorial/blob/master/images/select/select-by-grade-sex.png)
 
 在这里，函数`group_concat(字段名)`可以对分组的结果中的某个字段值进行字符串连接，即保留该组某个字段的所有值。例如：
 
@@ -170,7 +170,7 @@ select *,count(*) from student group by grade,sex;
 -- 将表 student 中的数据按字段 sex进行分组，并保留字段 name 的值
 select sex,age,count(*),group_concat(name) from student group by sex;
 ```
-![008](http://img.blog.csdn.net/20170627215231647)
+![select-group-by-sex](https://github.com/guobinhit/mysql-tutorial/blob/master/images/select/select-group-by-sex.png)
 
 此外，简单介绍**回溯统计**的概念：**利用`with rollup`关键字（书写在 SQL 语句末尾），可以在每次分组过后，根据当前分组的字段进行统计，并向上一级分组进行汇报**。例如：
 
@@ -178,7 +178,7 @@ select sex,age,count(*),group_concat(name) from student group by sex;
 -- 将表 student 中的数据按字段 sex进行分组，并进行回溯统计
 select sex,count(*) from student group by sex with rollup;
 ```
-![009](http://img.blog.csdn.net/20170627220823491)
+![select-with-rollup](https://github.com/guobinhit/mysql-tutorial/blob/master/images/select/select-with-rollup.png)
 
 观察上图，咱们会发现：**在进行回溯统计的时候，会将分组字段置空**。
 
@@ -197,7 +197,7 @@ select grade,count(*) from student group by grade having count(*) >= 2;
 select grade,count(*) from student where count(*) >= 2 group by grade;
 ```
 
-![1](http://img.blog.csdn.net/20170711085904967)
+![select-having](https://github.com/guobinhit/mysql-tutorial/blob/master/images/select/select-having.png)
 
 如上图所示，显然`having`子句可以对统计函数得到的结果进行筛选，但是`where`却不能。
 
@@ -211,7 +211,7 @@ select grade,count(*) as total from student group by grade having total >= 2;
 select grade,count(*) as total from student where total >= 2 group by grade;
 ```
 
-![2](http://img.blog.csdn.net/20170711090554273)
+![select-having-2](https://github.com/guobinhit/mysql-tutorial/blob/master/images/select/select-having-2.png)
 
 如上图所示，显然咱们的结论得到了验证。究其原因，`where`是从磁盘读取数据，而磁盘中数据的名字只能是字段名，别名是数据（字段）进入到内存后才产生的。值得注意的是，**在上述 SQL 语句中咱们使用了字段别名，这在无意中就优化了 SQL 并提高了效率，因为少了一次统计函数的计算**。
 
@@ -231,7 +231,7 @@ select grade,count(*) as total from student where total >= 2 group by grade;
 select * from student order by age;
 ```
 
-![3](http://img.blog.csdn.net/20170711091902136)
+![select-order-by](https://github.com/guobinhit/mysql-tutorial/blob/master/images/select/select-order-by.png)
 
 此外，咱们可以进行「**多字段排序**」，即**先根据某个字段进行排序，然后在排序后的结果中，再根据某个字段进行排序**。
 
@@ -242,7 +242,7 @@ select * from student order by age;
 select * from student order by age,grade desc;
 ```
 
-![4](http://img.blog.csdn.net/20170711093201665)
+![select-order-by-2](https://github.com/guobinhit/mysql-tutorial/blob/master/images/select/select-order-by-2.png)
 
 
 ### `limit`子句
@@ -263,7 +263,7 @@ select * from student;
 -- 查询表 student 中的 3 条记录
 select * from student limit 3;
 ```
-![00](http://img.blog.csdn.net/20170711192158394)
+![select-limit](https://github.com/guobinhit/mysql-tutorial/blob/master/images/select/select-limit.png)
 
 
 **第 2 种：限制起始值，限制长度（数据量）**
@@ -277,7 +277,7 @@ select * from student limit 0,2;
 select * from student limit 2,2;
 ```
 
-![01](http://img.blog.csdn.net/20170711192515751)
+![select-limit-2](https://github.com/guobinhit/mysql-tutorial/blob/master/images/select/select-limit-2.png)
 
 **第 3 种：主要用来实现数据的分页，目的是为用户节省时间，提高服务器的响应效率，减少资源的浪费**
 
