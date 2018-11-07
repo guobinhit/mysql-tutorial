@@ -29,7 +29,7 @@ select * from student cross join class;
 select * from student,class;
 ```
 
-![01](http://img.blog.csdn.net/20170711212738238)
+![select-student-crossjoin-class](https://github.com/guobinhit/mysql-tutorial/blob/master/images/join-query/select-student-crossjoin-class.png)
 
 实际上，笛卡尔积形式（交叉连接和多表查询）的结果并没有什么实际意义，应该尽量避免，其存在的价值就是保证连接这种结构的完整性。
 
@@ -50,7 +50,7 @@ select * from student inner join class on student.grade = class.grade;
 select * from student join class on student.grade = class.grade;
 ```
 
-![innerjoin](http://img.blog.csdn.net/20170714225952197)
+![select-student-innerjoin-class](https://github.com/guobinhit/mysql-tutorial/blob/master/images/join-query/select-student-innerjoin-class.png)
 
 在这里，值得注意的是：**如果两表中有某个表的条件字段名唯一，那么在书写连接条件的时候，可以省略表名，直接书写字段名，MySQL 会自动识别唯一字段名，但不建议这么做**。此外，咱们会发现，在上面的结果中有同名字段，这会给咱们理解数据的意义造成一定的困扰，这时就需要使用字段别名和表别名做区别啦！
 
@@ -61,7 +61,7 @@ select * from student join class on student.grade = class.grade;
 select s.*,c.id as c_id,c.grade as c_grade,room from student as s inner join class as c on s.grade = c.grade;
 ```
 
-![alias](http://img.blog.csdn.net/20170714232531767)
+![select-student-innerjoin-class-alias](https://github.com/guobinhit/mysql-tutorial/blob/master/images/join-query/select-student-innerjoin-class-alias.png)
 
 最后，内连接可以没有连接条件，即可以没有`on`及之后的内容，这时内连接的结果全部保留，与交叉连接的结果完全相同。而且在内连接的时候可以使用`where`关键字代替`on`，但不建议这么做，因为`where`没有`on`的效率高。
 
@@ -81,8 +81,8 @@ select s.*,c.id as c_id,c.grade as c_grade,room from student as s inner join cla
 select s.*,c.id as c_id,c.grade as c_grade,room from student as s inner join class as c where s.grade = c.grade;
 ```
 
-![onon](http://img.blog.csdn.net/20170714233908019)
-![whereon](http://img.blog.csdn.net/20170714233930361)
+![innerjoin-crossjoin](https://github.com/guobinhit/mysql-tutorial/blob/master/images/join-query/innerjoin-crossjoin.png)
+![on-where-join](https://github.com/guobinhit/mysql-tutorial/blob/master/images/join-query/on-where-join.png)
 
 ## 外连接
 
@@ -105,7 +105,7 @@ select s.*,c.id as c_id,c.grade as c_grade,room from student as s left join clas
 select s.*,c.id as c_id,c.grade as c_grade,room from student as s right join class as c on s.grade = c.grade;
 ```
 
-![outer](http://img.blog.csdn.net/20170715000220792)
+![left-right-join](https://github.com/guobinhit/mysql-tutorial/blob/master/images/join-query/left-right-join.png)
 
 实际上，无论以那张表为主表，其外连接的结果（记录数量）都不会少于主表的记录总数。此外，虽然左连接与右连接有主表差异，但显示的结果都是：**左表的数据在左边，右表的数据在右边**。
 
@@ -129,7 +129,7 @@ select * from student natural join class;
 select * from student inner join class on student.id = class.id and student.grade = class.grade;
 ```
 
-![natural](http://img.blog.csdn.net/20170715103845312)
+![natural-join](https://github.com/guobinhit/mysql-tutorial/blob/master/images/join-query/natural-join.png)
 
 观察上图，咱们会发现：**自然连接自动使用同名字段作为连接条件，而且在连接完成之后合并同名字段**。
 
@@ -147,7 +147,7 @@ select * from student natural left join class;
 select * from student natural right join class;
 ```
 
-![naturalwai](http://img.blog.csdn.net/20170715104058311)
+![natural-left-join](https://github.com/guobinhit/mysql-tutorial/blob/master/images/join-query/natural-left-join.png)
 
 实际上，自然连接并不常用。而且，咱们可以用内连接和外连接来模拟自然连接，模拟的关键就在于使用同名字段作为连接条件及合并同名字段。
 
@@ -165,7 +165,7 @@ select * from student natural left join class;
 select * from student left join class using(id,grade);
 ```
 
-![moni](http://img.blog.csdn.net/20170715105006248)
+![leftjoin-like-naturaljoin](https://github.com/guobinhit/mysql-tutorial/blob/master/images/join-query/leftjoin-like-naturaljoin.png)
 
 ----------
 
