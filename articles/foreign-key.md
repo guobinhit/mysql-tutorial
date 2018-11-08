@@ -25,7 +25,7 @@ create table my_foreign1(
 )charset utf8;
 ```
 
-![foreign1](http://img.blog.csdn.net/20170819224902221)
+![create-myforeignal1](https://github.com/guobinhit/mysql-tutorial/blob/master/images/foreign-key/create-myforeignal1.png)
 
 观察上图可知，字段`c_id`的`key`显示为`MUL`，表示多个键的意思。这是因为外键要求字段本身是一个索引（普通索引）如果字段本身没有索引，外键就会先创建一个索引，然后才创建外键本身。此外，`CONSTRAINT`后面的`my_foreign_ibfk_1`表示外键的名字。
 
@@ -53,7 +53,7 @@ foreign key(c_id)
 references class(id);
 ```
 
-![foreign2](http://img.blog.csdn.net/20170819230041629)
+![create-myforeign2](https://github.com/guobinhit/mysql-tutorial/blob/master/images/foreign-key/create-myforeign2.png)
 
 如上图所示，显然咱们已经增加外键成功啦！
 
@@ -72,7 +72,7 @@ references class(id);
 alter table my_foreign1 drop foreign key my_foreign1_ibfk_1;
 ```
 
-![foreign3](http://img.blog.csdn.net/20170819231014775)
+![desc-myforeign](https://github.com/guobinhit/mysql-tutorial/blob/master/images/foreign-key/desc-myforeign.png)
 
 观察上图可知，删除外键不能通过查看表结构来体现，而是应该通过创建表的语句来查看。
 
@@ -99,7 +99,7 @@ insert into my_foreign2 values(null,'Charies','6');
 insert into my_foreign2 values(null,'Charies','1'); 
 ```
 
-![foreign4](http://img.blog.csdn.net/20170820105124647)
+![select-class-myforeign2](https://github.com/guobinhit/mysql-tutorial/blob/master/images/foreign-key/select-class-myforeign2.png)
 
 如上图所示，在我们向子表`my_foreign2`插入外键字段为`6`的时候，提示插入失败，原因就是在父表`class`中，没有`ID`为`6`的记录。而在我们向子表`my_foreign2`插入外键字段为`1`的时候，提示成功，原因就是在父表`class`中，有`ID`为`1`的记录。
 
@@ -115,7 +115,7 @@ update class set id = 5 where id = 1;
 update class set id = 5 where id = 3;
 ```
 
-![foreign5](http://img.blog.csdn.net/20170820110130835)
+![update-class](https://github.com/guobinhit/mysql-tutorial/blob/master/images/foreign-key/update-class.png)
 
 如上图所示，在我们修改父表`class`中`ID`为`1`的时候，提示修改失败，原因就是在子表`my_foreign2`中已经引用了该值的主键字段。而在我们修改父表`class`中`ID`为`3`的时候，提示修改成功，原因就是在子表`my_foreign2`中并没有引用该值的主键字段。
 
@@ -138,7 +138,7 @@ insert into my_foreign1 valuse(1,'Gavin',3);
 alter table my_foreign1 add foreign key(c_id) references class(id);
 ```
 
-![foreign6](http://img.blog.csdn.net/20170820112819179)
+![select-insert-class](https://github.com/guobinhit/mysql-tutorial/blob/master/images/foreign-key/select-insert-class.png)
 
 如上图所示，在新增外键的时候，如果子表中（想要新增外键的字段）的数据已经存在，而父表中又没有与子表中（想要新增外键的字段）的数据相匹配的主键的话，那么操作就会失败；反之，则会成功。
 
@@ -152,7 +152,7 @@ insert into class valuse(3,'PM3.4','A115');
 alter table my_foreign1 add foreign key(c_id) references class(id);
 ```
 
-![foreign7](http://img.blog.csdn.net/20170820113638418)
+![insert-alter-show](https://github.com/guobinhit/mysql-tutorial/blob/master/images/foreign-key/insert-alter-show.png)
 
 如上图所示，显然当父表中存在与子表中（想要新增外键的字段）的数据相匹配的主键的话，增加主键的操作就会成功。
 
@@ -191,7 +191,7 @@ create table my_foreign3(
 )charset utf8;
 ```
 
-![foreign8](http://img.blog.csdn.net/20170820122712734)
+![create-myforeign3](https://github.com/guobinhit/mysql-tutorial/blob/master/images/foreign-key/create-myforeign3.png)
 
 如上图所示，在我们指定外键的约束模式之后，通过查看表的创建语句，可以看到具体的约束语句。
 
@@ -205,7 +205,7 @@ insert into my_foreign3 values(null,'Jobs',1),
 (null,'Swift',2),
 (null,'Sellen',1);
 ```
-![foreign9](http://img.blog.csdn.net/20170820123421517)
+![insert-myforeign3](https://github.com/guobinhit/mysql-tutorial/blob/master/images/foreign-key/insert-myforeign3.png)
 
 如上图所示，我们向表`my_foreign3`中插入了 5 条记录。接下来，我们就可以测试外键的级联模式和置空模式啦！呃，对啦，前提是我们需要把与父表`class`相关联的除`my_foreign3`之外的其他子表，也就是`my_foreign1`和`my_foreign2`的外键删除掉，否则的话，由于这两个子表的外键使用了严格模式，会干扰我们接下来的测试。
 
@@ -216,7 +216,7 @@ insert into my_foreign3 values(null,'Jobs',1),
 update class set id = 8 where id = 1;
 ```
 
-![foreign10](http://img.blog.csdn.net/20170820124603611)
+![select-myforeign3](https://github.com/guobinhit/mysql-tutorial/blob/master/images/foreign-key/select-myforeign3.png)
 
 执行如下 SQL 语句，测试置空模式：
 
@@ -225,7 +225,7 @@ update class set id = 8 where id = 1;
 delete from class where id = 2;
 ```
 
-![foreign11](http://img.blog.csdn.net/20170820124914320)
+![select-myforeign3-2](https://github.com/guobinhit/mysql-tutorial/blob/master/images/foreign-key/select-myforeign3-2.png)
 
 通过以上测试，我们已经验证了级联模式和置空模式的效果。其实，在我们进行删除置空操作的时候，有一个前提，那就是：**子表的外键字段必须允许为空，否则的话，操作是无法成功的**。	
 
