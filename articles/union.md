@@ -25,7 +25,7 @@ union all
 select * from class;
 ```
 
-![union1](http://img.blog.csdn.net/20170826203614206)
+![select-union-class](https://github.com/guobinhit/mysql-tutorial/blob/master/images/union/select-union-class.png)
 
 如上图所示，展示了联合查询的两种形式。特别地，联合查询只要求字段数相同，而跟类型无关。执行如下 SQL 语句，进行测试：
 
@@ -36,7 +36,7 @@ union distinct
 select name, age, id from student;
 ```
 
-![UNION2](http://img.blog.csdn.net/20170826204215277)
+![select-union-distinct](https://github.com/guobinhit/mysql-tutorial/blob/master/images/union/select-union-distinct.png)
 
 如上图所示，联合查询只保留了第一张表的字段，而不保留第二张表的字段。
 
@@ -53,7 +53,7 @@ select name, age, id from student;
 
 首先，让我们看看`student`表中的数据：
 
-![student](http://img.blog.csdn.net/20170826212532276)
+![select-student](https://github.com/guobinhit/mysql-tutorial/blob/master/images/union/select-student.png)
 
 接下来，给出一个需求：**在`student`表中，让男生按年龄升序排序，让女生按年龄降序排序**。根据我们刚刚学到的联合查询，貌似很容易啊！执行如下 SQL 语句，进行测试：
 
@@ -64,7 +64,7 @@ union
 select * from student where gender = "girl" order by age desc;
 ```
 
-![order1](http://img.blog.csdn.net/20170826213018938)
+![select-union-error](https://github.com/guobinhit/mysql-tutorial/blob/master/images/union/select-union-error.png)
 
 如上图所示，呃，好吧，貌似出错啦！这是因为要想在联合查询中使用`order by`，我们必须将`select`语句用括号括起来。执行如下 SQL 语句，进行测试：
 
@@ -75,7 +75,7 @@ union
 (select * from student where gender = "girl" order by age desc);
 ```
 
-![order2](http://img.blog.csdn.net/20170826213319951)
+![union-order](https://github.com/guobinhit/mysql-tutorial/blob/master/images/union/union-order.png)
 
 如上图所示，啊，我们都已经将`select`语句用括号括起来了，但是男生和女生也没有按我们的目的实现啊！好吧，这是因为要想在联合查询中使`order by`生效，我们必须将其与`limit`搭配使用，而`limit`的限定数，我们设置为一个非常大的数即可。执行如下 SQL 语句，进行测试：
 
@@ -86,7 +86,7 @@ union
 (select * from student where gender = "girl" order by age desc limit 666);
 ```
 
-![order](http://img.blog.csdn.net/20170826214015483)
+![union-order-2](https://github.com/guobinhit/mysql-tutorial/blob/master/images/union/union-order-2.png)
 
 如上图所示，显然，这次咱们的目的实现啦！
 
