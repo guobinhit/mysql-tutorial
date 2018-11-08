@@ -56,7 +56,7 @@
 
 - 第 22 篇：[联合查询](https://github.com/guobinhit/mysql-tutorial/blob/master/articles/union.md)
 
-- 第 23 篇：[子查询](https://github.com/guobinhit/mysql-tutorial/blob/master/articles/sub_query.md)
+- 第 23 篇：[子查询](https://github.com/guobinhit/mysql-tutorial/blob/master/articles/sub-query.md)
 
 - 第 24 篇：[视图（上）](https://github.com/guobinhit/mysql-tutorial/blob/master/articles/view-one.md)
 
