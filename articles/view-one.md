@@ -29,7 +29,7 @@ select * from student as s left join class c
 on s.c_id = c.id;
 ```
 
-![1](http://img.blog.csdn.net/20170903173835484)
+![create-myv1v2v3](https://github.com/guobinhit/mysql-tutorial/blob/master/images/view-one/create-myv1v2v3.png)
 
 如上图所示，在我们创建多表视图的时候，由于表`student`和`class`中都含有`id`字段，因此导致出现错误“重复列名”。修改上述创建多表视图的 SQL 语句，继续进行测试：
 
@@ -40,7 +40,7 @@ select s.*, c.grade, c.room from student as s left join class c
 on s.c_id = c.id;
 ```
 
-![2](http://img.blog.csdn.net/20170903174232775)
+![create-myv3](https://github.com/guobinhit/mysql-tutorial/blob/master/images/view-one/create-myv3.png)
 
 如上图所示，当我们去掉表`class`中的`id`字段之后，成功创建多表视图。这是因为，当视图的基表有多张的时候，字段名不能重复。
 
@@ -63,7 +63,7 @@ desc my_v1;
 show create table my_v1;
 ```
 
-![3](http://img.blog.csdn.net/20170903175912316)
+![desc-myv1](https://github.com/guobinhit/mysql-tutorial/blob/master/images/view-one/desc-myv1.png)
 
 虽然视图是虚拟表，但它和真正的表，至少在关键字上还是有区别的，因此在查询视图创建语句的时候，可以使用如下 SQL 语句：
 
@@ -72,7 +72,7 @@ show create table my_v1;
 show create view my_v1;
 ```
 
-![4](http://img.blog.csdn.net/20170903180237267)
+![show-create-myv1](https://github.com/guobinhit/mysql-tutorial/blob/master/images/view-one/show-create-myv1.png)
 
 此外，视图一旦创建，系统就会在视图对应的数据库文件夹下创建一个对应的`frm`结构文件，以保证结构的完整性。
 
@@ -93,7 +93,7 @@ select * from my_v2;
 select * from my_v3;
 ```
 
-![5](http://img.blog.csdn.net/20170903181329186)
+![select-myv1v2v3](https://github.com/guobinhit/mysql-tutorial/blob/master/images/view-one/select-myv1v2v3.png)
 
 如上图所示，我们查询视图的结果和查询创建视图时`as`后面连接的`select`语句的结果完全相同。
 
@@ -113,7 +113,7 @@ alter view my_v1 as
 select id, name, gender, age, c_id from student;
 ```
 
-![6](http://img.blog.csdn.net/20170903182832314)
+![alter-myv1](https://github.com/guobinhit/mysql-tutorial/blob/master/images/view-one/alter-myv1.png)
 
 ## 删除视图
 
@@ -131,7 +131,7 @@ drop table my_v4;
 drop view my_v4;
 ```
 
-![6](http://img.blog.csdn.net/20170903185516278)
+![drop-myv4](https://github.com/guobinhit/mysql-tutorial/blob/master/images/view-one/drop-myv4.png)
 
 如上图所示，我们不能用
 

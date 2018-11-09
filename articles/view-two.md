@@ -18,7 +18,7 @@ desc my_v3;
 insert into my_v3 values(7,'Gates','boy',2,170,'PM3.5','A315');
 ```
 
-![1](http://img.blog.csdn.net/20170909134753471)
+![desc-myv3](https://github.com/guobinhit/mysql-tutorial/blob/master/images/view-two/desc-myv3.png)
 
  - **限制 2**：可以向单表视图新增数据，但视图中包含的字段必须有基表中所有不能为空的字段。
 
@@ -36,7 +36,7 @@ select id,name,age,c_id from student;
 insert into my_v4 values(7,'Gates',25,2);
 ```
 
-![2](http://img.blog.csdn.net/20170909141917265)
+![desc-student](https://github.com/guobinhit/mysql-tutorial/blob/master/images/view-two/desc-student.png)
 
 如上图所示，在我们新建的视图`my_v4`中，没有包含不能为空的字段`gender`，因此在我们向`my_v4`中新增数据的时候，报错。其实，这也很好理解，试想，在 MySQL 尝试将视图中新增的数据（一条记录）插入到基表的时候，忽然发现一个本不能为`null`的字段的值为默认值`null`，自然就会报错啦！反之，如果单表视图中包含了基表中的全部非空字段，自然可以插入成功。执行如下 SQL 语句，进行测试：
 
@@ -55,7 +55,7 @@ insert into my_v5 values(2,'PM2016','A315');
 select * from class;
 ```
 
-![3](http://img.blog.csdn.net/20170909143447416)
+![create-myv5](https://github.com/guobinhit/mysql-tutorial/blob/master/images/view-two/create-myv5.png)
 
 如上图所示，显然我们通过单表视图向基表中插入数据成功啦！
 
@@ -86,7 +86,7 @@ delete from my_v5 where id = 2;
 select * from my_v5;
 ```
 
-![4](http://img.blog.csdn.net/20170909145056989)
+![delete-myv3](https://github.com/guobinhit/mysql-tutorial/blob/master/images/view-two/delete-myv3.png)
 
 ## 更新数据
 
@@ -112,7 +112,7 @@ update my_v5 set grade = 'PM2014' where id = 5;
 select * from my_v5;
 ```
 
-![5](http://img.blog.csdn.net/20170909150303075)
+![update-myv5](https://github.com/guobinhit/mysql-tutorial/blob/master/images/view-two/update-myv5.png)
 
 此外，更新视图数据并不总是成功的，这是因为有**更新限制**的存在。那么何为更新限制呢？
 
@@ -132,7 +132,7 @@ select * from my_v6;
 update my_v6 set height = 165 where id = 6;
 ```
 
-![6](http://img.blog.csdn.net/20170909151612737)
+![create-myv6](https://github.com/guobinhit/mysql-tutorial/blob/master/images/view-two/create-myv6.png)
 
 
 如上图所示，在更新视图的时候，更新失败，这是因为其违反了我们设置的更新限制。那么，视图之外的数据，我们能不能修改呢？执行如下 SQL 语句，进行测试：
@@ -148,7 +148,7 @@ update my_v6 set height = 188 where id = 4;
 select * from my_v6;
 ```
 
-![7](http://img.blog.csdn.net/20170909152042006)
+![select-myv6](https://github.com/guobinhit/mysql-tutorial/blob/master/images/view-two/select-myv6.png)
 
 如上图所示，更新视图`my_v6`之外数据的时候，显示成功。但是，待我们重新查询视图`my_v6`数据的时候，发现并没有真正更新成功。这是为什么呢？原因就在于我们不能通过视图去操作视图之外的数据。举一个不太恰当的例子，我们不能用自己手去操作别人兜里的钱啊！
 
@@ -179,7 +179,7 @@ select * from student;
 show create view my_v7;
 ```
 
-![8](http://img.blog.csdn.net/20170909163651397)
+![show-myv2](https://github.com/guobinhit/mysql-tutorial/blob/master/images/view-two/show-myv2.png)
 
 如上图所示，我们指定了视图`my_v7`的算法为`temptable`，但是对于算法的选择，我们该如何判断呢？答案是：如果视图的`select`语句中包含一个查询子句（五子句，包括`where`、`group by`、`order by` 、`having`和`limit`），而且很有可能查询子句的顺序比外部的查询语句的顺序要靠后（五子句的顺序），那么一定要使用`temptable`算法，其他情况可以不用指定，默认即可。
 
