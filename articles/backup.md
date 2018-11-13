@@ -61,11 +61,11 @@ insert into my_myisam values(1),(2),(3);
 select * from my_myisam;
 ```
 
-![1](http://img.blog.csdn.net/20171001124211791)
+![create-myisam](https://github.com/guobinhit/mysql-tutorial/blob/master/images/backup/create-myisam.png)
 
 如上图所示，我们创建了名为`my_myisam`，存储引擎为 Myisam 的数据表。为了验证 Myisam 的存储特性，我们可以到`data`文件夹查看具体的数据存储情况：
 
-![2](http://img.blog.csdn.net/20171001125044817)
+![my_myisam](https://github.com/guobinhit/mysql-tutorial/blob/master/images/backup/my_myisam.png)
 
 如上图所示，我们仅仅创建了一个表`my_myisam`，但是 Myisam 对于会生成三个存储文件，分别为：
 
@@ -75,7 +75,7 @@ select * from my_myisam;
 
 现在，我们将这三个文件复制到`testoo`数据库（至于如何找到 MySQL 数据文件的存储位置，可以参考[详述查看 MySQL 数据文件存储位置的方法](https://github.com/guobinhit/mysql-tutorial/blob/master/articles/datafile.md)）：
 
-![3](http://img.blog.csdn.net/20171001125843845)
+![data-location](https://github.com/guobinhit/mysql-tutorial/blob/master/images/backup/data-location.png)
 
 执行如下 SQL 语句，进行测试：
 
@@ -90,13 +90,13 @@ show tables;
 select * from my_myisam;
 ```
 
-![4](http://img.blog.csdn.net/20171001125723307)
+![use-testoo](https://github.com/guobinhit/mysql-tutorial/blob/master/images/backup/use-testoo.png)
 
 如上图所示，显然我们已经通过复制文件的方式，完成了数据表的备份工作。
 
 在这里，有一点需要我们注意，那就是：**我们可以将通过 InnoDB 存储引擎产生的`.frm`和`.idb`文件复制到另一个数据库，也可以通过`show tables`命令查看复制过来的表名称，但是却无法获得数据**。
 
-![5](http://img.blog.csdn.net/20171001130529481)
+![data-myclass](https://github.com/guobinhit/mysql-tutorial/blob/master/images/backup/data-myclass.png)
 
 执行如下 SQL 语句，进行测试：
 
@@ -108,7 +108,7 @@ show tables;
 select * from my_class;
 ```
 
-![6](http://img.blog.csdn.net/20171001130643315)
+![show-tables](https://github.com/guobinhit/mysql-tutorial/blob/master/images/backup/show-tables.png)
 
 
 通过以上测试，显然**数据表备份**这种备份方式更适用于 Myisam 存储引擎，而且备份的方式也很简单，直接复制 Myisam 存储引擎产生的`.frm`、`.MYD`和`.MYI`三个存储文件到新的数据库即可。
