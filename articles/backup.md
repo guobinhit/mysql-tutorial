@@ -132,7 +132,7 @@ select * from my_class;
 select * into outfile 'D:/CoderLife/testMySQL/class.txt' from class;
 ```
 
-![1](http://img.blog.csdn.net/20171001185200857)
+![into-outfile](https://github.com/guobinhit/mysql-tutorial/blob/master/images/backup/into-outfile.png)
 
 如上图所示，SQL 语句已经执行成功。在这里，如果我们遇到：
 
@@ -142,7 +142,7 @@ select * into outfile 'D:/CoderLife/testMySQL/class.txt' from class;
 
 为了验证是否真的将`class`表中的数据导出到指定位置，我们可以到该路径下进行确认：
 
-![2](http://img.blog.csdn.net/20171001185637160)
+![class-txt](https://github.com/guobinhit/mysql-tutorial/blob/master/images/backup/class-txt.png)
 
 如上图所示，显然我们已经将`class`表中的数据导出到本地啦！不过在这里，有一点需要我们特别注意，那就是：**对于从数据库导出的文件，我们最好用`EditPlus`等编辑工具打开，防止乱码**。
 
@@ -157,7 +157,7 @@ select * into outfile 'D:/CoderLife/testMySQL/class.txt' from class;
 select * from class into outfile 'D:/CoderLife/testMySQL/class2.txt';
 ```
 
-![3](http://img.blog.csdn.net/20171001190506222)
+![outfile-class2](https://github.com/guobinhit/mysql-tutorial/blob/master/images/backup/outfile-class2.png)
 
 接下来，我们学习一些用于单表数据备份的高级操作，即**自己指定字段和行的处理方式**。
 
@@ -188,7 +188,7 @@ starting by 'START:'
 from class ;
 ```
 
-![4](http://img.blog.csdn.net/20171001192031438)
+![pointed-single-table-backup](https://github.com/guobinhit/mysql-tutorial/blob/master/images/backup/pointed-single-table-backup.png)
 
 如上图所示，显然导出文件`class3.txt`按照我们指定的格式进行输出啦！在前面，我们已经测试了各种单表数据备份的方式，现在我们删除数据，并尝试还原数据，即**将保持在外部的数据重新恢复到数据表中**。But，由于单表数据备份仅能备份数据，因此如果表结构不存在，则不能进行还原。
 
@@ -217,7 +217,7 @@ starting by 'START:';
 select * from class;
 ```
 
-![5](http://img.blog.csdn.net/20171001193445728)
+![delete-class](https://github.com/guobinhit/mysql-tutorial/blob/master/images/backup/delete-class.png)
 
 如上图所示，显然在我们删除表`class`中的数据之后，还原数据成功。
 
@@ -242,15 +242,15 @@ SQL 备份，备份的是 SQL 语句。在进行 SQL 备份的时候，系统会
 mysqldump.exe -uroot -pbin.guo test class > D:/CoderLife/testMySQL/classSQL.sql
 ```
 
-![1](http://img.blog.csdn.net/20171002111841764)
+![login-mysql](https://github.com/guobinhit/mysql-tutorial/blob/master/images/backup/login-mysql.png)
 
 如上图所示，虽然`mysqldump`给出了警告（在命令行中输入密码是不安全的），但是我们输入的命令已经成功执行啦！在这里，如果执行上述命令不成功的话，很有可能是我们没有配置环境变量的问题。
 
-![2](http://img.blog.csdn.net/20171002112024147)
+![class-sql-location](https://github.com/guobinhit/mysql-tutorial/blob/master/images/backup/class-sql-location.png)
 
 如上图所示，在`testMySQL`目录下，已经生产了对表`class`的 SQL 备份，至于 SQL 备份的内容到底是什么，我们可以打开`classSQL.sql`文件进行查看：
 
-![3](http://img.blog.csdn.net/20171002112300870)
+![class-sql](https://github.com/guobinhit/mysql-tutorial/blob/master/images/backup/class-sql.png)
 
 如上图所示，通过 SQL 备份的文件，包含了各种 SQL 语句，如创建表的语句以及插入数据的语句等等。
 
@@ -280,11 +280,11 @@ delete from class;
 mysql -uroot -pbin.guo test < D:/CoderLife/testMySQL/classSQL.sql
 ```
 
-![4](http://img.blog.csdn.net/20171002113939685)
+![more-steps](https://github.com/guobinhit/mysql-tutorial/blob/master/images/backup/more-steps.png)
 
 如上图所示，上述命令全部执行成功。下面，我们检查还原结果，
 
-![5](http://img.blog.csdn.net/20171002114030390)
+![more-steps-2](https://github.com/guobinhit/mysql-tutorial/blob/master/images/backup/more-steps-2.png)
 
 如上图所示，显然表`class`的数据在删除之后，我们通过 SQL 备份的文件还原了数据。
 
@@ -310,9 +310,9 @@ source D:/CoderLife/testMySQL/classSQL.sql;
 select * from class;
 ```
 
-![6](http://img.blog.csdn.net/20171002114807283)
+![test-backup](https://github.com/guobinhit/mysql-tutorial/blob/master/images/backup/test-backup.png)
 
-![7](http://img.blog.csdn.net/20171002115002641)
+![test-back-2](https://github.com/guobinhit/mysql-tutorial/blob/master/images/backup/test-back-2.png)
 
 如上图所示，显然表`class`的数据在删除之后，我们通过 SQL 备份的文件利用第二种方式还原了数据。
 
