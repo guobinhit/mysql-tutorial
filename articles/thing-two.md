@@ -47,7 +47,7 @@ update bank_account set money = money - 10000 * 0.05 where id = 2;
 select * from bank_account;
 ```
 
-![save](http://img.blog.csdn.net/20171118105029691)
+![test-savepoint](https://github.com/guobinhit/mysql-tutorial/blob/master/images/thing-two/test-savepoint.png)
 
 执行如下 SQL 语句，继续进行测试：
 
@@ -66,7 +66,7 @@ select * from bank_account;
 commit;
 ```
 
-![rollback](http://img.blog.csdn.net/20171118105228230)
+![rollback](https://github.com/guobinhit/mysql-tutorial/blob/master/images/thing-two/rollback.png)
 
 如上图所示，显然在执行返回回滚点的操作之后，我们之前的错误操作得到了修正。
 
@@ -81,7 +81,7 @@ commit;
 show variables like 'autocommit';
 ```
 
-![autocommit](http://img.blog.csdn.net/20171118105830583)
+![show-variables](https://github.com/guobinhit/mysql-tutorial/blob/master/images/thing-two/show-variables.png)
 
 如上图所示，此为 MySQL 的默认设置。实际上，我们可以自己选择是否开启自动事务处理，其基本语法为，
 
@@ -107,7 +107,7 @@ update bank_account set money = money + 1000 where id = 1;
 select * from bank_account;
 ```
 
-![0ff](http://img.blog.csdn.net/20171118110823688)
+![set-autocommit](https://github.com/guobinhit/mysql-tutorial/blob/master/images/thing-two/set-autocommit.png)
 
 如上图所示，我们并没有开启事务，仅是关闭了自动事务处理，但是我们发现，在我们修改了`bank_account`表中数据之后，其结果并不会立即同步到数据库。实际上，这就是关闭了自动事务处理的正常现象。在我们执行`commit`命令之后，上述操作的结果即可进行同步：
 
@@ -119,7 +119,7 @@ commit;
 select * from bank_account;
 ```
 
-![commit](http://img.blog.csdn.net/20171118111322094)
+![commit](https://github.com/guobinhit/mysql-tutorial/blob/master/images/thing-two/commit.png)
 
 
 当然，如果我们不执行`commit`命令，而是执行`rollback`命令，那么之前的所用操作都会回滚到初始的状态。在此，我们需要注意的是：**通常情况下，我们是应该开启自动事务处理的，否则的话，每次操作完成之后都需要我们手动提交，那岂不是要被累死了**？
@@ -159,7 +159,7 @@ update bank_account set money = money + 666 where id = 2;
 select * from bank_account;
 ```
 
-![isolation](http://img.blog.csdn.net/20171118115845872)
+![compare-bankaccount](https://github.com/guobinhit/mysql-tutorial/blob/master/images/thing-two/compare-bankaccount.png)
 
 如上图所示，其完美的展示了事务隔离性的效果，即窗口 1 的中的事务操作，没有影响到窗口 2 的事务操作；窗口 2 的中的事务操作，也没有影响到窗口 1 的事务操作。But，在我们执行下面的 SQL 语句之后，我们将会看到不同的效果：
 
@@ -187,11 +187,11 @@ update bank_account set money = money + 666 where name = 'Gavin';
 select * from bank_account;
 ```
 
-![geli](http://img.blog.csdn.net/20171118120618537)
+![compare-bankaccount-2](https://github.com/guobinhit/mysql-tutorial/blob/master/images/thing-two/compare-bankaccount-2.png)
 
 如上图所示，窗口 1 的事务可以正常执行，但是窗口 2 的事务开启成功，但是在修改数据的时候被“卡”住了，并且在持续一段时间之后，报出了一个 `Lock wait timeout exceeded`的错误：
 
-![geliiiii](http://img.blog.csdn.net/20171118120759846)
+![compare-bankaccount-3](https://github.com/guobinhit/mysql-tutorial/blob/master/images/thing-two/compare-bankaccount-3.png)
 
 那么到底是什么原因导致了上述错误的发生呢？这就是涉及到了数据库的另外一个知识点 **锁机制** 啦！
 

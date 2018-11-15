@@ -29,7 +29,7 @@ insert into bank_account values
 (null, '0000000000000002', 'Gavin', 6000);
 ```
 
-![1](http://img.blog.csdn.net/20171021195300581)
+![create-bankaccount](https://github.com/guobinhit/mysql-tutorial/blob/master/images/thing-one/create-bankaccount.png)
 
 接下来，让我们一起了解事务的操作。
 
@@ -50,7 +50,7 @@ insert into bank_account values
 start transaction;
 ```
 
-![2](http://img.blog.csdn.net/20171021200426871)
+![start-transaction](https://github.com/guobinhit/mysql-tutorial/blob/master/images/thing-one/start-transaction.png)
 
 **第 2 步**：减少 Charies 账户的余额
 
@@ -61,11 +61,11 @@ update bank_account set money = money - 1000 where id = 1;
 select * from bank_account;
 ```
 
-![3](http://img.blog.csdn.net/20171021201044152)
+![update-bankaccount](https://github.com/guobinhit/mysql-tutorial/blob/master/images/thing-one/update-bankaccount.png)
 
 如上图所示，Charies 账户的余额显示减少`1000`，但实际上，由于我们开启了事务，数据表真实的数据，并没有同步更新。为了验证这个论断，我们重新打开一个数据库客户端，查询`bank_account`表的数据：
 
-![4](http://img.blog.csdn.net/20171021201540765)
+![compare-bankaccount](https://github.com/guobinhit/mysql-tutorial/blob/master/images/thing-one/compare-bankaccount.png)
 
 如上图所示，显然数据库的事务安全机制起了作用，当我们开启（手动）事务之后，其后一系列操作并没有直接写入数据库，而是存入了事务日志。在这里，我们并没有打开数据库事务的日志进行验证，因为事务日志存储的是经过编译之后的字节码文件。
 
@@ -78,7 +78,7 @@ update bank_account set money = money + 1000 where id = 2;
 select * from bank_account;
 ```
 
-![5](http://img.blog.csdn.net/20171021202331094)
+![compare-bankaccount-2](https://github.com/guobinhit/mysql-tutorial/blob/master/images/thing-one/compare-bankaccount-2.png)
 
 如上图所示，Gavin 账户的余额显示增加`1000`，但是，由于我们开启了事务，数据表真实的数据，仍然没有同步更新。
 
@@ -96,7 +96,7 @@ commit;
 select * from bank_account;
 ```
 
-![6](http://img.blog.csdn.net/20171021203403955)
+![compare-bankaccount-3](https://github.com/guobinhit/mysql-tutorial/blob/master/images/thing-one/compare-bankaccount-3.png)
 
 如上图所示，当我们提交事务之后，数据库的真实记录更新，两个客户端的数据一致。
 

@@ -26,7 +26,7 @@
 show variables;
 ```
 
-![systemvariable](http://img.blog.csdn.net/20171203193555417)
+![show-variables](https://github.com/guobinhit/mysql-tutorial/blob/master/images/database-variable/show-variables.png)
 
 如上图所示，显示了 MySQL 在本服务器上共含有 506 个系统变量。更近一步，我们可以查看具体的系统变量的值，语法为：
 
@@ -39,7 +39,7 @@ show variables;
 select @@autocommit,@@version,@@version_compile_os,@@wait_timeout;
 ```
 
-![variablevalus](http://img.blog.csdn.net/20171203194217805)
+![select-system-var](https://github.com/guobinhit/mysql-tutorial/blob/master/images/database-variable/select-system-var.png)
 
 如上图所示，我们查到了具体的变量的值。此外，**任何一个有内容返回的查询操作都是用`select`来完成的**。
 
@@ -61,7 +61,7 @@ set @@wait_timeout = 20000;
 select @@autocommit, @@wait_timeout;
 ```
 
-![modify](http://img.blog.csdn.net/20171203200203284)
+![set-section-var](https://github.com/guobinhit/mysql-tutorial/blob/master/images/database-variable/set-section-var.png)
 
 如上图所示，我们修改了`autocommit`和`wait_timeout`的值，但仅作用于会话级别，即只有当前当次连接有效，当再次打开一个新窗口的时候，我们会发现所有的变量值都恢复如初。
 
@@ -79,7 +79,7 @@ set global autocommit = 0;
 select @@autocommit;
 ```
 
-![global](http://img.blog.csdn.net/20171203201139818)
+![set-global-var](https://github.com/guobinhit/mysql-tutorial/blob/master/images/database-variable/set-global-var.png)
 
 如上图所示，当我们修改全局变量的时候，其效果对所有客户端的任一次连接都有效。But，如果某一个客户端在我们修改全局变量之前已经连上了服务器并且没有退出的话，那么我们的修改对其当前当次连接无效，需要重新登录才能生效。
 
@@ -101,7 +101,7 @@ set @name = 'binguo';
 select @name;
 ```
 
-![selfvariable](http://img.blog.csdn.net/20171203202631796)
+![set-varself](https://github.com/guobinhit/mysql-tutorial/blob/master/images/database-variable/set-varself.png)
 
 观察上图，我们会发现查看自定义变量和系统变量有些细微的区别，那就是：查看系统变量时，`select`后面是跟着`@@`的，而查看自定义变量时，`select`后面是跟着`@`的。在这里，我们需要注意：**在 MySQL 中，很多地方会默认将`=`处理为比较符号，因此 MySQL 还提供了另外一种赋值符号`:=`，即冒号与等号拼接而成的符号**。
 
@@ -121,7 +121,7 @@ select @name = name from student;
 select @name;
 ```
 
-![name](http://img.blog.csdn.net/20171203203833634)
+![select-var-student](https://github.com/guobinhit/mysql-tutorial/blob/master/images/database-variable/select-var-student.png)
 
 如上图所示，呃，这是什么鬼？好吧，细心的同学估计已经发现了，在上面的`select`语句中，我们误将`:=`写为`=`啦，然后 MySQL 将`=`处理为比较符号，并且在`student`表中没有发现与`binguo`匹配的名字，因此显示的结果皆为`0`，如果匹配成功，则会显示`1`。下面，我们修改赋值符号，重新进行测试：
 
@@ -133,7 +133,7 @@ select @name := name from student;
 select @name;
 ```
 
-![fuzhifuhao](http://img.blog.csdn.net/20171203204410183)
+![select-var-student-2](https://github.com/guobinhit/mysql-tutorial/blob/master/images/database-variable/select-var-student-2.png)
 
 如上图所示，我们会发现上述`select`语句的作用为：从`student`表读取数据，然后依次赋值给自定义变量`@name`，并且先赋的值会被覆盖，仅保留最后一个赋值结果。
 
@@ -154,7 +154,7 @@ select @name;
 select * from student;
 ```
 
-![errorinto](http://img.blog.csdn.net/20171203211108688)
+![select-var-student-3](https://github.com/guobinhit/mysql-tutorial/blob/master/images/database-variable/select-var-student-3.png)
 
 
 如上图所示，显然`EEROR`，内容为：返回结果包含的内容超过一列。实际上，在未加限制条件的情况下，我们直接从表中捞取数据，是捞取全部数据，因此忽略上述 SQL 语句中的`into @name`，其返回的结果为表中的全部`name`值，自然是超过一个了。在这种情况下，系统会报错，却将捞取数据的第一个值赋值给了`@name`，也就是说，在捞取数据超过一条记录的时候，系统会默认将第一个值赋值给自定义变量。
@@ -169,7 +169,7 @@ select name from student where id = 2 into @name;
 select @name;
 ```
 
-![rightinto](http://img.blog.csdn.net/20171203205939649)
+![select-var-student-4](https://github.com/guobinhit/mysql-tutorial/blob/master/images/database-variable/select-var-student-4.png)
 
 如上图所示，我们获取数据并赋值成功。
 
