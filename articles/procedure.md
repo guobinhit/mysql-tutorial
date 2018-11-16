@@ -21,7 +21,7 @@ create procedure pro()
 select * from student;
 ```
 
-![16](http://img.blog.csdn.net/20180303152317511)
+![create-procedure](https://github.com/guobinhit/mysql-tutorial/blob/master/images/procedure/create-procedure.png)
 
 如上图所示，我们创建了一个名为`pro()`的过程，其目的就是为了查询`student`表中的数据。但实际上，过程多用于处理数据，查询并不多用。
 
@@ -31,13 +31,13 @@ select * from student;
 
 - `show procedure status + [like 'pattern'];`
 
-![17](http://img.blog.csdn.net/20180303152637538)
+![show-procedure](https://github.com/guobinhit/mysql-tutorial/blob/master/images/procedure/show-procedure.png)
 
 查看过程的创建语句，基本语法为：
 
 - `show create procedure + 过程名;`
 
-![18](http://img.blog.csdn.net/20180303152744196)
+![show-create-procedure](https://github.com/guobinhit/mysql-tutorial/blob/master/images/procedure/show-create-procedure.png)
 
 ### 调用过程
 
@@ -45,7 +45,7 @@ select * from student;
 
 - `call + 过程名;`
 
-![19](http://img.blog.csdn.net/20180303153024878)
+![call-pro](https://github.com/guobinhit/mysql-tutorial/blob/master/images/procedure/call-pro.png)
 
 ### 修改过程 & 删除过程
 
@@ -62,7 +62,7 @@ drop procedure pro;
 show procedure status like 'pro'\G;
 ```
 
-![20](http://img.blog.csdn.net/20180303153409873)
+![drop-procedure](https://github.com/guobinhit/mysql-tutorial/blob/master/images/procedure/drop-procedure.png)
 
 ### 过程参数
 
@@ -92,7 +92,7 @@ delimiter ;
 call pro2(1,2,3);
 ```
 
-![21](http://img.blog.csdn.net/20180303165150957)
+![create-pro2](https://github.com/guobinhit/mysql-tutorial/blob/master/images/procedure/create-pro2.png)
 
 如上图所示，过程`pro2`创建成功。但是，在调用过程的时候出现错误，造成该错误的原因为：过程的`out`和`inout`两个参数只能接受变量，而我们传递了具体的数值，报错也就在情理之中啦！接下来，执行如下语句，进行测试：
 
@@ -108,7 +108,7 @@ call pro2(@var1, @var2, @var3);
 select @var1, @var2, @var3;
 ```
 
-![22](http://img.blog.csdn.net/20180303165813193)
+![set-aite-var](https://github.com/guobinhit/mysql-tutorial/blob/master/images/procedure/set-aite-var.png)
 
 如上图所示，在我们将变量传递给过程的时候，过程正常执行。此外，通过`select`语句我们可以看到传递给`out`类型参数的`@var2`的值在经过过程处理之后，被置为`null`值啦，这也是符合`out`类型参数的先清空后使用原则的。而且，由于`out`和`inout`只能接受变量作为参数，因此在过程内部对`out`和`inout`传入的变量的修改会影响到过程外部。在这里，值得我们注意是：存储过程对变量的操作是滞后的，即**只有在过程结束的时候，才会将过程内部修改的值赋值给外部传入的对应的全局变量**。执行如下语句，进行测试：
 
@@ -137,7 +137,7 @@ $$
 delimiter ;
 ```
 
-![23](http://img.blog.csdn.net/20180303171216448)
+![create-pro3](https://github.com/guobinhit/mysql-tutorial/blob/master/images/procedure/create-pro3.png)
 
 ```
 -- 调用过程
@@ -146,7 +146,7 @@ call pro3(@var1, @var2, @var3);
 select @var1, @var2, @var3;
 ```
 
-![24](http://img.blog.csdn.net/20180303171506912)
+![call-pro3](https://github.com/guobinhit/mysql-tutorial/blob/master/images/procedure/call-pro3.png)
 
 如上图所示，存储过程执行成功，且验证了我们结论，即：**在存储过程没有结束的时候，对传入变量的修改并不会影响到对应的全局变量；只有在存储过程结束后，才会将对应的变量值赋值给`out`和`inout`类型的变量，而`in`类型的变量不受影响**。
 

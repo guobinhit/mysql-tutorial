@@ -53,7 +53,7 @@ $$
 delimiter ;	
 ```
 
-![01](http://img.blog.csdn.net/20180103220140999)
+![select-goods](https://github.com/guobinhit/mysql-tutorial/blob/master/images/code-execution-structure/select-goods.png)
 
 ```
 -- 插入订单
@@ -64,7 +64,7 @@ select * from goods;
 select * from orders;
 ```
 
-![02](http://img.blog.csdn.net/20180103220216878)
+![insert-orders](https://github.com/guobinhit/mysql-tutorial/blob/master/images/code-execution-structure/insert-orders.png)
 
 ```
 -- 插入订单
@@ -75,7 +75,7 @@ select * from goods;
 select * from orders;
 ```
 
-![03](http://img.blog.csdn.net/20180103220401645)
+![insert-orders-loop](https://github.com/guobinhit/mysql-tutorial/blob/master/images/code-execution-structure/insert-orders-loop.png)
 
 如上图所示，虽然在报错的时候，没有给出友好的提示信息，但我们已经实现了该需求。
 

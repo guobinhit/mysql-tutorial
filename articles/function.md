@@ -24,13 +24,13 @@ set @three = 'Gavin';
 select @cn, @en, @one, @two, @three;
 ```
 
-![1](http://img.blog.csdn.net/2018030312401492)
+![set-aite-cn](https://github.com/guobinhit/mysql-tutorial/blob/master/images/function/set-aite-cn.png)
 
 然后，调用系统函数进行测试：
 
 - `substring`，截取字符串，单位为字符；
 
-![2](http://img.blog.csdn.net/20180303124316330)
+![select-substring](https://github.com/guobinhit/mysql-tutorial/blob/master/images/function/select-substring.png)
 
 如上图所示，在 MySQL 中字符串的位置是从`1`开始，`0`含有特殊的意义。
 
@@ -38,27 +38,27 @@ select @cn, @en, @one, @two, @three;
 - `char_length`，获取字符长度；
 - `length`，获取字节长度；
 
-![3](http://img.blog.csdn.net/2018030312461235)
+![select-char-length](https://github.com/guobinhit/mysql-tutorial/blob/master/images/function/select-char-length.png)
 
 - `instr`，判断字符串中某个子串是否存在，存在则返回具体的位置，不存在则返回`0`；
 
-![4](http://img.blog.csdn.net/20180303125417272)
+![select-instr](https://github.com/guobinhit/mysql-tutorial/blob/master/images/function/select-instr.png)
 
 - `lpad`，左填充，将字符串按照某个指定的填充方式，填充到指定（字符）长度；
 
-![5](http://img.blog.csdn.net/2018030312594361)
+![select-lpad](https://github.com/guobinhit/mysql-tutorial/blob/master/images/function/select-lpad.png)
 
 如上图所示，在对`@en`进行填充的时候，填充结果为`hellohellhello world`，其中第二个`hello`并没有填充全，这是因为系统函数`lpad`的第二个参数限定的了变量`@en`的具体长度，如示例中我们设置其为`20`，而原`@en`的长度为`11`，因此只能向`@en`中在填充`9`个字符。
 
 - `insert`，找到目标位置，将指定长度的字符串替换为目标字符串；
 
-![6](http://img.blog.csdn.net/2018030313100113)
+![select-insert](https://github.com/guobinhit/mysql-tutorial/blob/master/images/function/select-insert.png)
 
 如上图所示，`insert`函数并没有修改变量自身的值，只是对变量的值进行加工而已。
 
 - `strcmp`，比较字符串的大小；
 
-![7](http://img.blog.csdn.net/20180303131400954)
+![select-strcmp](https://github.com/guobinhit/mysql-tutorial/blob/master/images/function/select-strcmp.png)
 
 如上图所示，在用`strcmp`函数对字符串进行比较的时候不区分大小写（默认校对集），并用`0`表示两个字符串相等；用`-1`表示第一个参数的字符串小于第二个参数的字符串；用`1`表示第一个参数的字符串大于第二个参数的字符串。
 
@@ -92,7 +92,7 @@ return 521;
 -- 调用自定义函数
 select showLove();
 ```
-![8](http://img.blog.csdn.net/20180303134415202)
+![create-show-love](https://github.com/guobinhit/mysql-tutorial/blob/master/images/function/create-show-love.png)
 
 ### 查看函数
 
@@ -100,7 +100,7 @@ select showLove();
 
 - `show function status + [like 'pattern'];`
 
-![9](http://img.blog.csdn.net/20180303135209908)
+![show-function-status](https://github.com/guobinhit/mysql-tutorial/blob/master/images/function/show-function-status.png)
 
 如上图所示，我们可以看到`showLove`函数是属于`test`数据库的，这引出了函数的一个性质，即**函数是属于具体数据库的，在一个数据库定义的函数不能在其定义的数据库外使用，但是可以查看**。
 
@@ -108,7 +108,7 @@ select showLove();
 
 - `show create function + 函数名;`
 
-![10](http://img.blog.csdn.net/2018030313543411)
+![show-create-function](https://github.com/guobinhit/mysql-tutorial/blob/master/images/function/show-create-function.png)
 
 ### 修改函数 & 删除函数
 
@@ -125,7 +125,7 @@ drop function showLove;
 show function status like 'showLove'\G;
 ```
 
-![11](http://img.blog.csdn.net/20180303135927583)
+![drop-function](https://github.com/guobinhit/mysql-tutorial/blob/master/images/function/drop-function.png)
 
 ### 函数参数
 
@@ -156,7 +156,7 @@ $$
 delimiter ;
 ```
 
-![12](http://img.blog.csdn.net/20180303142308376)
+![create-addall2](https://github.com/guobinhit/mysql-tutorial/blob/master/images/function/create-addall2.png)
 
 如上图所示，函数已经定义成功。接下来，执行如下语句，进行测试：
 
@@ -167,7 +167,7 @@ select addAll(100);
 -- 查询自定义变量 @res 和 @i
 select @res, @i;
 ```
-![13](http://img.blog.csdn.net/20180303142619986)
+![select-addall](https://github.com/guobinhit/mysql-tutorial/blob/master/images/function/select-addall.png)
 
 如上图所示，求和函数`addAll`已经正确执行。此外，我们发现在函数内部使用`@`符号定义的变量`@res`和`@i`在函数外部也是可以查看使用的，这说明：**使用`@`符号定义的变量为全局变量**。
 
@@ -208,7 +208,7 @@ $$
 delimiter ;
 ```
 
-![14](http://img.blog.csdn.net/20180303145957621)
+![create-addall2](https://github.com/guobinhit/mysql-tutorial/blob/master/images/function/create-addall2.png)
 
 如上图所示，函数已经定义成功。接下来，执行如下语句，进行测试：
 
@@ -216,7 +216,7 @@ delimiter ;
 -- 调用函数求和
 select addAll(100), addAll2(100);
 ```
-![15](http://img.blog.csdn.net/20180303150125572)
+![select-addall2](https://github.com/guobinhit/mysql-tutorial/blob/master/images/function/select-addall2.png)
 
 如上图所示，函数已经正确执行。
 

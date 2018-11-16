@@ -48,7 +48,7 @@ create table orders(
 	goods_number int default 1
 )charset utf8;
 ```
-![createtables](http://img.blog.csdn.net/20180101171434839)
+![create-goods](https://github.com/guobinhit/mysql-tutorial/blob/master/images/trigger/create-goods.png)
 
 接下来，执行如下 SQL 语句，创建触发器：
 
@@ -63,7 +63,7 @@ end -- 触发器内容结束
 $$ -- 结束语句
 delimiter ; -- 恢复语句结束符
 ```
-![createtrigger](http://img.blog.csdn.net/20180101173413160)
+![create-trigger](https://github.com/guobinhit/mysql-tutorial/blob/master/images/trigger/create-trigger.png)
 
 ### 查询触发器
 
@@ -77,7 +77,7 @@ delimiter ; -- 恢复语句结束符
 -- 查询所有触发器，\G 表示旋转
 show triggers\G;
 ```
-![showtrigger](http://img.blog.csdn.net/20180101174439535)
+![show-triggers](https://github.com/guobinhit/mysql-tutorial/blob/master/images/trigger/show-triggers.png)
 
 当然，我们也可以查询创建触发器的语句
 
@@ -89,14 +89,14 @@ show triggers\G;
 -- 查询触发器创建语句，\G 表示旋转
 show create trigger after_order\G;
 ```
-![sqltrigger](http://img.blog.csdn.net/20180101174709988)
+![show-ceate-triggers](https://github.com/guobinhit/mysql-tutorial/blob/master/images/trigger/show-ceate-triggers.png)
 
 此外，**所有的触发器都会被系统保持到`information_schema.triggers`这张表中**，执行如下 SQL，进行测试：
 ```
 -- 查询触发器，\G 表示旋转
 select * from information_schema.triggers\G;
 ```
-![oooo](http://img.blog.csdn.net/20180101185148483)
+![select-triggers](https://github.com/guobinhit/mysql-tutorial/blob/master/images/trigger/select-triggers.png)
 
 ### 使用触发器
 
@@ -114,7 +114,8 @@ select * from orders;
 -- 查看商品表
 select * from goods;
 ```
-![usetrigger](http://img.blog.csdn.net/20180101181034152)
+
+![user-triggers](https://github.com/guobinhit/mysql-tutorial/blob/master/images/trigger/user-triggers.png)
 
 观察上图，我们会发现：触发器确实生效了，在我们向`orders`表`insert`数据的时候，`goods`表发生了变化；但是其并没有如我们期望那样执行，就算我们将`goods_id`设置为`2`，`goods_number`设置为`10`，触发器操作的仍然是`goods`表中`id`为 `1`的记录且库存量只减`1`。且先不提这个问题，在创建触发器的时候，我们要特别注意：**触发器的触发对象和事件类型，决不能同触发器主体的内容相同，防止发生死循环**。
 
@@ -133,7 +134,7 @@ drop trigger after_order;
 show triggers;
 ```
 
-![deletetrigger](http://img.blog.csdn.net/20180101182826645)
+![drop-triggers](https://github.com/guobinhit/mysql-tutorial/blob/master/images/trigger/drop-triggers.png)
 
 ### 触发器记录
 
@@ -168,7 +169,7 @@ delimiter ; -- 恢复语句结束符
 show triggers\G;
 ```
 
-![newtrigger](http://img.blog.csdn.net/20180101190739091)
+![create-show-triggers](https://github.com/guobinhit/mysql-tutorial/blob/master/images/trigger/create-show-triggers.png)
 
 ```
 -- 查看商品表
@@ -182,7 +183,8 @@ select * from orders;
 -- 查看商品表
 select * from goods;
 ```
-![testnewtrigger](http://img.blog.csdn.net/20180101190855572)
+
+![select-goods](https://github.com/guobinhit/mysql-tutorial/blob/master/images/trigger/select-goods.png)
 
 如上图所示，显然`after_order_new`触发器按我们预期那样正确的工作啦！
 
