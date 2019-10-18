@@ -1,6 +1,6 @@
 # 史上最简单的 MySQL 教程
 
-![author](https://img.shields.io/badge/author-chariesgavin-blueviolet.svg)![lover](https://img.shields.io/badge/lover-xiaoxue-red.svg)![last commit](https://img.shields.io/github/last-commit/guobinhit/mysql-tutorial.svg)![issues](https://img.shields.io/github/issues/guobinhit/mysql-tutorial.svg)![stars](https://img.shields.io/github/stars/guobinhit/mysql-tutorial.svg)![forks](https://img.shields.io/github/forks/guobinhit/mysql-tutorial.svg)![license](https://img.shields.io/github/license/guobinhit/mysql-tutorial.svg)
+![author](https://img.shields.io/badge/author-chariesgavin-blueviolet.svg)![last commit](https://img.shields.io/github/last-commit/guobinhit/mysql-tutorial.svg)![issues](https://img.shields.io/github/issues/guobinhit/mysql-tutorial.svg)![stars](https://img.shields.io/github/stars/guobinhit/mysql-tutorial.svg)![forks](https://img.shields.io/github/forks/guobinhit/mysql-tutorial.svg)![license](https://img.shields.io/github/license/guobinhit/mysql-tutorial.svg)
 
 　　数据库（Database）是按照数据结构来组织、存储和管理数据的仓库，它产生于距今六十多年前，随着信息技术和市场的发展，特别是二十世纪九十年代以后，数据管理不再仅仅是存储和管理数据，而转变成用户所需要的各种数据管理的方式。数据库有很多种类型，从最简单的存储有各种数据的表格到能够进行海量数据存储的大型数据库系统都在各个方面得到了广泛的应用。在这里，作者将详细讲述 MySQL 数据库的相关知识，以供大家参考。当然，也需要在此声明：**如果文章中出现了错误，请大家帮忙斧正，深感荣幸。**
 
