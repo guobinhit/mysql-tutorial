@@ -103,7 +103,7 @@ select * from student where id between 2 and 5;
 
 ![select-between](https://github.com/guobinhit/mysql-tutorial/blob/master/images/select/select-between.png)
 
-如上图所示，咱们会发现：**在使用`between and`的时候，其选择的区间为闭区间，即包含端点值**。此外，`and`前面的数值必须大于等于`and`后面的数值，否则会出现空判断，例如：
+如上图所示，咱们会发现：**在使用`between and`的时候，其选择的区间为闭区间，即包含端点值**。此外，`and`前面的数值必须小于等于`and`后面的数值，否则会出现空判断，例如：
 
 ![select-set](https://github.com/guobinhit/mysql-tutorial/blob/master/images/select/select-set.png)
 
