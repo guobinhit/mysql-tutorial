@@ -67,6 +67,7 @@
 - 第 2 篇：[详述 MySQL 数据库输入密码后闪退的问题及解决方案](https://github.com/guobinhit/mysql-tutorial/blob/master/articles/resovle-method.md)
 - 第 3 篇：[详述查看 MySQL 数据文件存储位置的方法](https://github.com/guobinhit/mysql-tutorial/blob/master/articles/datafile.md)
 - 第 4 篇：[详述 MySQL 导出数据遇到 secure-file-priv 的问题](https://github.com/guobinhit/mysql-tutorial/blob/master/articles/secure.md)
+- 第 5 篇：[详细学习 SQL](https://www.scaler.com/topics/sql/)
 
 
 ----------
